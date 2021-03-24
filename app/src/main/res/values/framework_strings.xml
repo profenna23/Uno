@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--These strings are specific to the GameFramework  Please do not edit strings unless you
+really need to.-->
+<resources>
+    <!--The following are settings menu strings-->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_help">Help</string>
+    <string name="save_game">Save Game</string>
+    <string name="load_game">Load Game</string>
+    <string name="delete_game">Delete Game</string>
+    <!--The following are Configuration menu strings-->
+    <string name="title_activity_game_main">Shall We Play A Game?</string>
+    <string name="save_config">Save As Default Configuration</string>
+    <string name="begin_game">Begin Game</string>
+    <string name="name_label">Name:</string>
+    <string name="server_ip_code">Server\'s IP Code:</string>
+    <string name="remove_player">Remove Player</string>
+    <string name="add_player">Add Player</string>
+    <string name="player_name">Player Name</string>
+    <string name="player_type">Player Type</string>
+    <string name="guest">Guest</string>
+    <string name="save_config_as_default">Make Configuration Default</string>
+    <string name="on_screen_logging">On-screen Logging</string>
+    <string name="debug_logging">Debug Logging</string>
+    <string name="start_the_game">Start Game!</string>
+    <string name="Saved_Config_Msg">Game configuration saved.</string>
+    <!--The following strings are for the continue game messages-->
+    <string name="dialog_continue_label">Continue Playing Game</string>
+    <string name="dialog_quit_label">Quit</string>
+    <string name="dialog_quit_question">Do you really want to quit?</string>
+    <!--The following strings are for the tabs on the game_config_main screen-->
+    <string name="local_tab">Local Game</string>
+    <string name="remote_tab">Remote Game</string>
+    <string name="settings_tab">Game Settings</string>
+    <!--The following strings are used in the game_config_main for displaying the different types
+    of players. These strings are used in MainActivity and GameConfig.-->
+    <string name="Human_Player_Name">Human Player</string>
+    <string name="Computer_Dumb_Name">Computer Player (Dumb)</string>
+    <string name="Computer_Smart_Name">Computer Player (Smart)</string>
+    <string name="Network_Internet_Name">Wi-Fi Player</string>
+    <string name="Network_Bluetooth_Name">Bluetooth Network Player</string>
+    <!--The following strings are used as error messages in various classes-->
+    <string name="IP_Error_Msg">Unable to determine IP address.</string>
+    <string name="Config_Error_Msg">Error in attempting to read game configuration file.</string>
+    <string name="Game_Creation_Error_Msg">Game creation failed.</string>
+    <string name="Local_Player_Name_Error_Msg">Local player name cannot be empty.</string>
+    <string name="Game_Server_Error_Msg">Could not find game server on network.</string>
+    <string name="Mult_GUI_Tabl_Error_Msg">Cannot have more than one GUI player on a single device.</string>
+    <string name="Saved_Config_Error_Msg">"Unable to save game configuration.</string>
+    <string name="Min_Player_Error_Msg">Sorry, removing a player would drop below the minimum allowed.</string>
+    <string name="Max_Player_Error_Msg">Sorry, adding another player would exceed the maximum allowed."</string>
+</resources>
