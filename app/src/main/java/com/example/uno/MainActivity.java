@@ -19,6 +19,7 @@ public class MainActivity extends GameMainActivity {
      */
     @Override
     public GameConfig createDefaultConfig(){
+
         return null;
     }
 
@@ -27,6 +28,7 @@ public class MainActivity extends GameMainActivity {
      */
     @Override
     public LocalGame createLocalGame(GameState gameState) {
+
         return null;
     }
 }
