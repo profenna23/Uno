@@ -133,4 +133,32 @@ public class UnoState extends GameState {
 
         playerTurn = 1;
     }
+    public UnoState(UnoState other) {
+        playerTurn = other.playerTurn;
+        for(int i = 0; i < other.cardsInHandP1.size(); i++) {
+            cardsInHandP1.set(i, other.cardsInHandP1.get(i));
+        }
+        for(int i = 0; i < other.cardsInHandP2.size(); i++) {
+            cardsInHandP2.set(i, other.cardsInHandP2.get(i));
+        }
+        for(int i = 0; i < other.cardsInHandP3.size(); i++) {
+            cardsInHandP3.set(i, other.cardsInHandP3.get(i));
+        }
+        for(int i = 0; i < other.cardsInHandP4.size(); i++) {
+            cardsInHandP4.set(i, other.cardsInHandP4.get(i));
+        }
+        for(int i = 0; i < other.discardPile.size(); i++) {
+            discardPile.set(i, other.discardPile.get(i));
+        }
+        for(int i = 0; i < other.drawPile.size(); i++) {
+            drawPile.set(i, other.drawPile.get(i));
+        }
+
+
+
+
+
+
+
+    }
 }
