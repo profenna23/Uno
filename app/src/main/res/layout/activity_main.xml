@@ -4,15 +4,270 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B59489"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/unoButton"
+        android:layout_width="185dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="740dp"
+        android:layout_marginEnd="150dp"
+        android:backgroundTint="#FF0000"
+        android:text="UNO"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="272dp"
+        android:layout_height="506dp"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/p4card1"
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:backgroundTint="#000000"
+            android:text="UNO"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/p4card2"
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:backgroundTint="#2C2C2C"
+            android:text="UNO"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/p4card3"
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:backgroundTint="#3E3E3E"
+            android:text="UNO"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="350dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <LinearLayout
+            android:id="@+id/player2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/p2card1"
+                android:layout_width="146dp"
+                android:layout_height="229dp"
+                android:backgroundTint="#000000"
+                android:text="UNO"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:iconTint="#00000000" />
+
+            <Button
+                android:id="@+id/p2card2"
+                android:layout_width="146dp"
+                android:layout_height="229dp"
+                android:backgroundTint="#2C2C2C"
+                android:text="UNO"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:iconTint="#00F44336" />
+
+            <Button
+                android:id="@+id/p2card3"
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:backgroundTint="#3E3E3E"
+                android:text="UNO"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:iconTint="#004CAF50" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/setPile"
+                android:layout_width="146dp"
+                android:layout_height="229dp"
+                android:layout_weight="1"
+                android:backgroundTint="#4CAF50"
+                android:text="8"
+                android:textColor="#000000"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/drawPile"
+                android:layout_width="146dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#000000"
+                android:text="UNO"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/p1card1"
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFEB3B"
+                android:text="7"
+                android:textColor="#000000"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                app:iconTint="#00F44336" />
+
+            <Button
+                android:id="@+id/p1card2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#3F51B5"
+                android:text="REVERSE"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="852dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="RESTART" />
+
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="EXIT" />
+
+        <Button
+            android:id="@+id/dealButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="DEAL" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="250dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="206dp">
+
+        <LinearLayout
+            android:id="@+id/player3"
+            android:layout_width="match_parent"
+            android:layout_height="451dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/p3card1"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:backgroundTint="#000000"
+                android:text="UNO"
+                android:textSize="30dp" />
+
+            <Button
+                android:id="@+id/p3card2"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2C2C2C"
+                android:text="UNO"
+                android:textSize="30dp" />
+
+            <Button
+                android:id="@+id/p3card3"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:backgroundTint="#3E3E3E"
+                android:text="UNO"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

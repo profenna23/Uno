@@ -12,6 +12,7 @@ public class UnoLocalGame extends LocalGame {
 
     @Override
     protected boolean canMove(int playerIdx) {
+
         return false;
     }
 
