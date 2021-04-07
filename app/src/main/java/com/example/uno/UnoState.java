@@ -161,4 +161,8 @@ public class UnoState extends GameState {
 
 
     }
+
+    public int getPlayerTurn() {
+        return playerTurn;
+    }
 }

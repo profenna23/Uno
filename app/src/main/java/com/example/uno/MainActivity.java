@@ -28,7 +28,11 @@ public class MainActivity extends GameMainActivity {
      */
     @Override
     public LocalGame createLocalGame(GameState gameState) {
+        if(gameState == null) {
+            return new UnoLocalGame();
+        }
+        return new UnoLocalGame((UnoState) gameState);
 
-        return null;
+
     }
 }
