@@ -43,6 +43,10 @@ public class UnoLocalGame extends LocalGame {
 
     @Override
     protected boolean makeMove(GameAction action) {
+        // if action is unoPlayCard
+        // then use getters to get player & cardToPlay
+        // if this players turn
+        // then ask gamestate to play card & return true if valid
         return false;
     }
 }
