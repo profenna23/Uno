@@ -3,6 +3,7 @@ package com.example.uno;
 import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 
 public class UnoLocalGame extends LocalGame {
 
@@ -53,6 +54,9 @@ public class UnoLocalGame extends LocalGame {
 
     @Override
     protected boolean makeMove(GameAction action) {
+        if(action instanceof unoPlayCard) {
+
+        }
         // if action is unoPlayCard
         // then use getters to get player & cardToPlay
         // if this players turn
