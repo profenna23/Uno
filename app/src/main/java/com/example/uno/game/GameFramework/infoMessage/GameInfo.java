@@ -2,7 +2,7 @@ package com.example.uno.game.GameFramework.infoMessage;
 
 import java.io.Serializable;
 
-import edu.up.cs301.game.GameFramework.Game;
+import com.example.uno.game.GameFramework.Game;
 
 /**
  * An informational message that is sent from the game to a player.  The

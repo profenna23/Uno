@@ -1,6 +1,6 @@
 package com.example.uno.game.GameFramework.gameConfiguration;
 
-import edu.up.cs301.game.GameFramework.players.GamePlayer;
+import com.example.uno.game.GameFramework.players.GamePlayer;
 
 /**
  * class GamePlayerType

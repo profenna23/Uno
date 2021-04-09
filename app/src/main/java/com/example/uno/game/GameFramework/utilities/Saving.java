@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import edu.up.cs301.game.GameFramework.infoMessage.GameState;
+import com.example.uno.game.GameFramework.infoMessage.GameState;
 
 /**
  * Helper-class for writing and reading save files
