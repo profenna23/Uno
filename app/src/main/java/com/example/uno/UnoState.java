@@ -165,4 +165,21 @@ public class UnoState extends GameState {
     public int getPlayerTurn() {
         return playerTurn;
     }
+
+    public ArrayList<Card> getCardsInHandP1() {
+        return cardsInHandP1;
+    }
+
+
+    public ArrayList<Card> getCardsInHandP2() {
+        return cardsInHandP2;
+    }
+
+    public ArrayList<Card> getCardsInHandP3() {
+        return cardsInHandP3;
+    }
+
+    public ArrayList<Card> getCardsInHandP4() {
+        return cardsInHandP4;
+    }
 }
