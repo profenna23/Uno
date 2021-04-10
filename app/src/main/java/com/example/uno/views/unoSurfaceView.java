@@ -1,6 +1,7 @@
 package com.example.uno.views;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 
 import com.example.uno.UnoState;
@@ -49,6 +50,12 @@ public class unoSurfaceView extends FlashSurfaceView {
 
 
     /**
-     * callback method, called whenever
+     * callback method, called whenever it's time to redraw frame
+     *
+     * @param g - the canvas to draw on
      */
+
+    public void onDraw(Canvas g) {
+        //not sure what to pull here because tic tac toe has a board (we don't have that)
+    }
 }
