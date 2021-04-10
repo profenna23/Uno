@@ -17,7 +17,7 @@ public class UnoLocalGame extends LocalGame {
     public UnoLocalGame(UnoState unoState) {
 
         super();
-        super.state = new UnoState(unoState);
+        super.state = unoState;
     }
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
@@ -48,6 +48,7 @@ public class UnoLocalGame extends LocalGame {
         if(state.getCardsInHandP4().size() == 0 && state.getCardsInHandP4().get(0) != null) {
             return "Player 2 has won!";
         }
+        return null;
 
 
 
