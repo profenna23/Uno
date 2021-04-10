@@ -48,6 +48,9 @@ public class unoSurfaceView extends FlashSurfaceView {
         setBackgroundColor(backgroundColor()); //init
     }
 
+    public void setState(UnoState state) {
+        this.state = state;
+    }
 
     /**
      * callback method, called whenever it's time to redraw frame

@@ -4,7 +4,10 @@ import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
+import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
+import com.example.uno.uno.tttActionMessage.actions.unoRestart;
+
 
 public class UnoLocalGame extends LocalGame {
 
@@ -57,7 +60,40 @@ public class UnoLocalGame extends LocalGame {
     @Override
     protected boolean makeMove(GameAction action) {
         if(action instanceof unoPlayCard) {
+           unoPlayCard playCard = (unoPlayCard) action;
+           UnoState state = (UnoState) super.state;
+           int cardPlayed = playCard.getCardtoPlay();
+           int playerID = getPlayerIdx(playCard.getPlayer());
 
+           if(playerID == 0 ) {
+               (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+               state.getCardsInHandP1().remove(0);
+               state.getCardsInHandP1().trimToSize();
+               state.setPlayerTurn(2);
+
+               return true;
+           }
+            if(playerID == 1) {
+                (state.getDiscardPile()).add(state.getCardsInHandP2().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                state.getCardsInHandP2().remove(0);
+                state.getCardsInHandP2().trimToSize();
+                state.setPlayerTurn(3);
+                return true;
+            }
+            if(playerID == 2) {
+                (state.getDiscardPile()).add(state.getCardsInHandP3().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                state.getCardsInHandP3().remove(0);
+                state.getCardsInHandP3().trimToSize();
+                state.setPlayerTurn(4);
+                return true;
+            }
+            if(playerID == 3) {
+                (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed); // 0 needs to be where in the hand the card has been played
+                state.getCardsInHandP4().remove(0);
+                state.getCardsInHandP4().trimToSize();
+                state.setPlayerTurn(1);
+                return true;
+            }
         }
         // if action is unoPlayCard
         // then use getters to get player & cardToPlay
@@ -69,8 +105,28 @@ public class UnoLocalGame extends LocalGame {
     @Override
     protected boolean exitGame(GameAction action) {
         if (action instanceof unoExit) {
+            //if action is unoExit
+            //then use constructor to get player
+
+            }
+
+        return false;
+    }
+
+    @Override
+    protected boolean getHelp(GameAction action) {
+        if(action instanceof unoHelp) {
 
         }
         return false;
     }
+
+    @Override
+    protected boolean gameRestart(GameAction action) {
+        if(action instanceof unoRestart){
+
+        }
+        return false;
+    }
+
 }
