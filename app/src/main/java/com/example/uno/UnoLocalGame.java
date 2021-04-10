@@ -5,7 +5,10 @@ import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
 import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
+import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
+import com.example.uno.uno.tttActionMessage.actions.unoRestart;
+
 
 public class UnoLocalGame extends LocalGame {
 
@@ -135,13 +138,27 @@ public class UnoLocalGame extends LocalGame {
     @Override
     protected boolean exitGame(GameAction action) {
         if (action instanceof unoExit) {
+            //if action is unoExit
+            //then use constructor to get player
+
+            }
+
+        return false;
+    }
+
+    @Override
+    protected boolean getHelp(GameAction action) {
+        if(action instanceof unoHelp) {
 
         }
         return false;
     }
 
     @Override
-    public GamePlayer[] getPlayers() {
-        return super.getPlayers();
+    protected boolean gameRestart(GameAction action) {
+        if(action instanceof unoRestart){
+
+        }
+        return false;
     }
 }

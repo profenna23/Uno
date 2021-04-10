@@ -305,6 +305,7 @@ public abstract class LocalGame implements Game, Tickable {
 
 
 
+
         //Logging the current game phase so we know what it is.
         Logger.debugLog("Current GAMEPHASE", " " + this.gameStage);
 
@@ -382,6 +383,37 @@ public abstract class LocalGame implements Game, Tickable {
      * 			Tells whether the move was a legal one.
      */
     protected abstract boolean makeMove(GameAction action);
+
+    /**
+     * Makes a move, called exit game on behalf of a player.
+     *
+     * @param action
+     *          The action the player has sent to the game.
+     * @return
+     *          Tells whether the action was confirmed or not.
+     */
+    protected abstract boolean exitGame(GameAction action);
+
+    /**
+     * Makes a move, called Restart on behalf of a player.
+     *
+     * @param action
+     *          The action the player has sent to the game.
+     * @return
+     *          Tells whether the action was confirmed or not.
+     */
+    protected abstract boolean unoRestart(GameAction action);
+
+    /**
+     * Makes a move, called Help on behalf of a player.
+     *
+     * @param action
+     *          The action the player has sent to the game.
+     * @return
+     *          Tells whether the action was confirmed or not.
+     */
+    protected abstract boolean unoHelp(GameAction action);
+
 
     /**
      * sends a given action to the Game object
