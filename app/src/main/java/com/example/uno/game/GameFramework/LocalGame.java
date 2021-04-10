@@ -303,6 +303,8 @@ public abstract class LocalGame implements Game, Tickable {
             return;
         }
 
+
+
         //Logging the current game phase so we know what it is.
         Logger.debugLog("Current GAMEPHASE", " " + this.gameStage);
 
