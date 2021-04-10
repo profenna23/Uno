@@ -2,13 +2,16 @@ package com.example.uno.uno.players;
 
 import com.example.uno.Card;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
+import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameComputerPlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class unoEasyCP extends GameComputerPlayer {
 
-    /*
+    /**
      * Constructor for the unoEasyCP class
      */
     public unoEasyCP(String name) {
@@ -41,37 +44,56 @@ public class unoEasyCP extends GameComputerPlayer {
          */
 
         // 1. verify gameinfo is a gamestate obj
-        if (info != gamestate obj){
-            // if not, exit - else, continue
-            exit;
-        }
+        if (!(info instanceof GameState)) return;
+        GameState myState = (GameState)info;
 
         // 2. read card on top of discard pile
         // find last item in discardPile
-        Card lastCardPlayed = // insert last item in discardPile
+
+        // first item in discardPile is the last card played
+        // NEED TO ACCESS LAST CARD PLAYED
+        Card lastCardPlayed = myState.discardPile[0];
 
         // 3. make a list of playable cards
-        ArrayList <Card> playableCards;
+        ArrayList<Card> playableCards = new ArrayList<>();
 
         // 4. go through players card & add to arraylist
         // use an array of players cards
+
         // find number of cards in hand
-        int numCards;
+        // NEED TO ACCESS CP PLAYER HAND
+        int numCards = getCardsInHandP2.size();
+
+
         for (int i=0; i<numCards; i++){
             // if color or number of cardsInHandP1[i] matches lastCardPlayed
-                // add to playableCards list
-            // else
-                // continue
+            if (lastCardPlayed.getColor() == getCardsInHandP2[i].getColor()){
+                // color matches - add card
+                playableCards.add(getCardsInHandP2[i]);
+            } else if (lastCardPlayed.getNum() == getCardsInHandP2[i].getNum()){
+                // number matches - add card
+                playableCards.add(getCardsInHandP2[i]);
+            } else if (getCardsInHandP2[i].getNum() == -4 || getCardsInHandP2[i].getNum() == -5){
+                // wild card - add card
+                playableCards.add(getCardsInHandP2[i]);
+            } else {
+                // card is not playable
+                continue;
+            }
         }
 
-        // choose random card from playableCards
+        // number of playable cards
+        int numPlayable = playableCards.size();
+
+        // random number chooses which card to play
         Random rndCard = new Random();
-        int number = rndCard.nextInt(sizeof(playableCards));
-        Card cardToPlay = playableCards[number];
+        int number = rndCard.nextInt(numPlayable);
 
+        // sends cardToPlay to be random one chosen
+        Card cardToPlay = playableCards.get(number);
 
-        // sends action - last line
-        game.sendAction(new unoPlayCard(cardToPlay));
+        // sends action
+        game.sendAction(new unoPlayCard(this, cardToPlay));
 
     }
 }

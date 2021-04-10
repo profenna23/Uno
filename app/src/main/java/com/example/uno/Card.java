@@ -21,9 +21,7 @@ public class Card {
         return numOnCard;
     }
 
-    public int getColor() {
-        return colorOnCard;
-    }
+    public int getColor() { return colorOnCard; }
     public void setColor(int newColor) {
         colorOnCard = newColor;
     }
