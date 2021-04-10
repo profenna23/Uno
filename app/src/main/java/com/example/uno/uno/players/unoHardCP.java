@@ -1,5 +1,6 @@
 package com.example.uno.uno.players;
 
+import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.players.GameComputerPlayer;
 
 public class unoHardCP extends GameComputerPlayer {
@@ -41,4 +42,7 @@ public class unoHardCP extends GameComputerPlayer {
         // sends action - last line
         game.sendAction(new unoPlayCard(cardToPlay));
     }
+
+
+
 }
