@@ -20,7 +20,7 @@ public class UnoLocalGame extends LocalGame {
     public UnoLocalGame(UnoState unoState) {
 
         super();
-        super.state = new UnoState(unoState);
+        super.state = unoState;
     }
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
@@ -51,6 +51,7 @@ public class UnoLocalGame extends LocalGame {
         if(state.getCardsInHandP4().size() == 0 && state.getCardsInHandP4().get(0) != null) {
             return "Player 2 has won!";
         }
+        return null;
 
 
 
@@ -59,7 +60,40 @@ public class UnoLocalGame extends LocalGame {
     @Override
     protected boolean makeMove(GameAction action) {
         if(action instanceof unoPlayCard) {
+           unoPlayCard playCard = (unoPlayCard) action;
+           UnoState state = (UnoState) super.state;
+           int cardPlayed = playCard.getCardtoPlay();
+           int playerID = getPlayerIdx(playCard.getPlayer());
 
+           if(playerID == 0 ) {
+               (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+               state.getCardsInHandP1().remove(0);
+               state.getCardsInHandP1().trimToSize();
+               state.setPlayerTurn(2);
+
+               return true;
+           }
+            if(playerID == 1) {
+                (state.getDiscardPile()).add(state.getCardsInHandP2().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                state.getCardsInHandP2().remove(0);
+                state.getCardsInHandP2().trimToSize();
+                state.setPlayerTurn(3);
+                return true;
+            }
+            if(playerID == 2) {
+                (state.getDiscardPile()).add(state.getCardsInHandP3().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                state.getCardsInHandP3().remove(0);
+                state.getCardsInHandP3().trimToSize();
+                state.setPlayerTurn(4);
+                return true;
+            }
+            if(playerID == 3) {
+                (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed); // 0 needs to be where in the hand the card has been played
+                state.getCardsInHandP4().remove(0);
+                state.getCardsInHandP4().trimToSize();
+                state.setPlayerTurn(1);
+                return true;
+            }
         }
         // if action is unoPlayCard
         // then use getters to get player & cardToPlay

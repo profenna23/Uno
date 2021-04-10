@@ -6,7 +6,7 @@ public class Card {
     private String typeOfCard;
 
     public Card(int num, int color, String type) {
-        numOnCard = num; // num is -1 for skip, -2 for reverse, -3for draw2, -4 for wild, -5 for wild+4
+        numOnCard = num; // num is -1 for skip, -2 for reverse, -3  for draw2, -4 for wild, -5 for wild+4
         colorOnCard = color;
         typeOfCard = typeOfCard;
     }
@@ -21,9 +21,7 @@ public class Card {
         return numOnCard;
     }
 
-    public int getColor() {
-        return colorOnCard;
-    }
+    public int getColor() { return colorOnCard; }
     public void setColor(int newColor) {
         colorOnCard = newColor;
     }

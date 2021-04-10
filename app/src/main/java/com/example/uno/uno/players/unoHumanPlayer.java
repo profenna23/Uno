@@ -76,12 +76,9 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListe
     }
 
     /**
-     * callback method when the screen it touched. We're
-     * looking for a screen touch (which we'll detect on
-     * the "up" movement" onto a tic-tac-tie square
+     * callback method when the a button is played. We're
+     * looking for a button clicked
      *
-     * @param event
-     * 		the motion event that was detected
      */
     public boolean onClick(View v) {
         // which view, which button pressed

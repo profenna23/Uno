@@ -1,6 +1,10 @@
 package com.example.uno;
 
+import com.example.uno.game.GameFramework.Game;
+import com.example.uno.game.GameFramework.GameMainActivity;
+import com.example.uno.game.GameFramework.gameConfiguration.GameConfig;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
+import com.example.uno.game.GameFramework.players.GamePlayer;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,6 +26,8 @@ public class UnoState extends GameState {
 
 
     private int playerTurn;
+
+    
 
 
 
@@ -132,6 +138,7 @@ public class UnoState extends GameState {
 
 
         playerTurn = 1;
+
     }
     public UnoState(UnoState other) {
         playerTurn = other.playerTurn;
@@ -181,5 +188,17 @@ public class UnoState extends GameState {
 
     public ArrayList<Card> getCardsInHandP4() {
         return cardsInHandP4;
+    }
+
+    public void setDiscardPile(Card card, int idx) {
+        discardPile.set(idx, card);
+        discardPile.trimToSize();
+    }
+
+    public ArrayList<Card> getDiscardPile() {
+        return discardPile;
+    }
+    public void setPlayerTurn(int turn) {
+        playerTurn = turn;
     }
 }
