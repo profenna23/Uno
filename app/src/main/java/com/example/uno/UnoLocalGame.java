@@ -3,6 +3,7 @@ package com.example.uno;
 import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 
@@ -92,6 +93,38 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
         }
+        if(action instanceof unoDrawCard) {
+            unoPlayCard playCard = (unoDrawCard) action;
+            UnoState state = (UnoState) super.state;
+            int playerID = getPlayerIdx(playCard.getPlayer());
+
+            if(playerID == 0 ) {
+                state.getCardsInHandP1().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
+                state.getDrawPile().trimToSize();
+                return true;
+            }
+            if(playerID == 1) {
+                state.getCardsInHandP2().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
+                state.getDrawPile().trimToSize()
+                return true;
+            }
+            if(playerID == 2) {
+                state.getCardsInHandP3().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
+                state.getDrawPile().trimToSize();
+                return true;
+            }
+            if(playerID == 3) {
+                state.getCardsInHandP4().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
+                state.getDrawPile().trimToSize();
+                return true;
+            }
+
+
+        }
         // if action is unoPlayCard
         // then use getters to get player & cardToPlay
         // if this players turn
@@ -105,5 +138,10 @@ public class UnoLocalGame extends LocalGame {
 
         }
         return false;
+    }
+
+    @Override
+    public GamePlayer[] getPlayers() {
+        return super.getPlayers();
     }
 }

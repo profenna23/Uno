@@ -201,4 +201,8 @@ public class UnoState extends GameState {
     public void setPlayerTurn(int turn) {
         playerTurn = turn;
     }
+
+    public ArrayList<Card> getDrawPile() {
+        return drawPile;
+    }
 }
