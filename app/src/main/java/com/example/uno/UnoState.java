@@ -189,4 +189,16 @@ public class UnoState extends GameState {
     public ArrayList<Card> getCardsInHandP4() {
         return cardsInHandP4;
     }
+
+    public void setDiscardPile(Card card, int idx) {
+        discardPile.set(idx, card);
+        discardPile.trimToSize();
+    }
+
+    public ArrayList<Card> getDiscardPile() {
+        return discardPile;
+    }
+    public void setPlayerTurn(int turn) {
+        playerTurn = turn;
+    }
 }
