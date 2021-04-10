@@ -1,6 +1,8 @@
 package com.example.uno.uno.tttActionMessage.actions;
 
+import com.example.uno.Card;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
+import com.example.uno.game.GameFramework.players.GamePlayer;
 
 public class unoPlayCard extends GameAction {
     /**
@@ -15,4 +17,5 @@ public class unoPlayCard extends GameAction {
     // constructor - takes cardToPlay & player
     // 2 getters (2 instance variables)
 }
+
 

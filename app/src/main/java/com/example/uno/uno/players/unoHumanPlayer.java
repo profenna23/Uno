@@ -7,7 +7,10 @@ import com.example.uno.R;
 import com.example.uno.game.GameFramework.GameMainActivity;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.players.GameHumanPlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoExit;
+import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
+import com.example.uno.uno.tttActionMessage.actions.unoRestart;
 import com.example.uno.views.unoSurfaceView;
 
 public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListener{
@@ -82,6 +85,11 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListe
         // if button = card1
         // then send action to game that plays card
         game.sendAction(new unoPlayCard(this, cardToPlay));
+
+
+        game.sendAction(new unoExit(this));
+        game.sendAction(new unoRestart(this));
+        game.sendAction(new unoHelp(this));
     }
 
 }
