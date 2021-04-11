@@ -53,7 +53,7 @@ public class unoEasyCP extends GameComputerPlayer {
 
         // first item in discardPile is the last card played
         // NEED TO ACCESS LAST CARD PLAYED
-        Card lastCardPlayed = myState.discardPile[0];
+        Card lastCardPlayed = myState.discardPile.get[0];
 
         // 3. make a list of playable cards
         ArrayList<Card> playableCards = new ArrayList<>();
