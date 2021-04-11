@@ -6,6 +6,7 @@ import android.view.View;
 import com.example.uno.R;
 import com.example.uno.game.GameFramework.GameMainActivity;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
+import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameHumanPlayer;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoHelp;
@@ -62,7 +63,10 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListe
     public void receiveInfo(GameInfo info) {
         // draw method - updates screen
         // if gameinfo instanceof gamestate
-        // then look at gamestate to figure out what screen should display
+
+        if (info instanceof GameState){
+            // then look at gamestate to figure out what screen should display
+        }
 
     }
 
@@ -73,6 +77,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListe
     public void setAsGui(GameMainActivity activity) {
         // onCreate method - need to set content view & set listeners
         this.myActivity = activity;
+
     }
 
     /**
