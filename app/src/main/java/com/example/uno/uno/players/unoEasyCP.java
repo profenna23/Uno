@@ -4,6 +4,7 @@ import com.example.uno.Card;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameComputerPlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 
 import java.util.ArrayList;
@@ -85,9 +86,70 @@ public class unoEasyCP extends GameComputerPlayer {
         // number of playable cards
         int numPlayable = playableCards.size();
 
+        if (numPlayable == 0){
+            // no playable cards - draw card & turn over
+            game.sendAction(new unoDrawCard(this));
+        }
+
         // random number chooses which card to play
         Random rndCard = new Random();
         int number = rndCard.nextInt(numPlayable);
+
+        /**
+         * SMART CP IMPLEMENTATION
+         */
+        /*
+        // special cards first:
+        for (int i=0; i<numPlayable; i++) {
+            // loops through playable cards looking for a draw 2 card
+            if (playableCards[i].getNum == -3){
+                // if there is a draw 2 card - play it
+                Card cardToPlay = playableCards[i];
+            }
+        }
+
+        for (int i=0; i<numPlayable; i++) {
+            // loops through playable cards looking for a skip card
+            if (playableCards[i].getNum == -1){
+                // if there is a skip card - play it
+                Card cardToPlay = playableCards[i];
+            }
+        }
+
+        for (int i=0; i<numPlayable; i++) {
+            // loops through playable cards looking for a reverse card
+            if (playableCards[i].getNum == -2){
+                // if there is a reverse card - play it
+                Card cardToPlay = playableCards[i];
+            }
+        }
+
+        // wild cards next
+        for (int i=0; i<numPlayable; i++) {
+            // loops through playable cards looking for a wild draw 4 card
+            if (playableCards[i].getNum == -5){
+                // if there is a wild draw 4 card - play it
+                Card cardToPlay = playableCards[i];
+            }
+        }
+
+        for (int i=0; i<numPlayable; i++) {
+            // loops through playable cards looking for a wild card
+            if (playableCards[i].getNum == -4){
+                // if there is a wild card - play it
+                Card cardToPlay = playableCards[i];
+            }
+        }
+
+        // face cards:
+        for (int i=0; i<numPlayable; i++) {
+            // loops through playable cards looking for a face card
+            if (playableCards[i].getNum > 0){
+                // if there is a face card - play it
+                Card cardToPlay = playableCards[i];
+            }
+        }*/
+
 
         // sends cardToPlay to be random one chosen
         Card cardToPlay = playableCards.get(number);
