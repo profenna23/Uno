@@ -1,9 +1,11 @@
 package com.example.uno.uno.players;
 
 import com.example.uno.Card;
+import com.example.uno.UnoState;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameComputerPlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 
 import java.util.ArrayList;
@@ -28,9 +30,6 @@ public class unoEasyCP extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
-        // if gameinfo is a gamestate obj
-        // randomly pick card from hand
-        // take game, send new playcard action
 
         /**
          * Implementation:
@@ -43,39 +42,53 @@ public class unoEasyCP extends GameComputerPlayer {
          *      - Play the card that corresponds to the number
          */
 
-        // 1. verify gameinfo is a gamestate obj
+        // verify info is an unoState object
         if (!(info instanceof GameState)) return;
-        GameState myState = (GameState)info;
+        UnoState myState = (UnoState)info;
 
-        // 2. read card on top of discard pile
-        // find last item in discardPile
+        // find last card played - on top of discard pile
+        Card lastCardPlayed = myState.getDiscardPile().get(0);
 
-        // first item in discardPile is the last card played
-        // NEED TO ACCESS LAST CARD PLAYED
-        Card lastCardPlayed = myState.discardPile[0];
-
-        // 3. make a list of playable cards
+        // new arrayList of playable cards
         ArrayList<Card> playableCards = new ArrayList<>();
 
-        // 4. go through players card & add to arraylist
-        // use an array of players cards
+        // get number of cards in the correct computer player's hand
+        int numCards = 0;
+        if (playerNum == 1){
+            numCards = myState.getCardsInHandP1().size();
+        } else if (playerNum == 2){
+            numCards = myState.getCardsInHandP2().size();
+        } else if (playerNum == 3){
+            numCards = myState.getCardsInHandP3().size();
+        } else {
+            numCards = myState.getCardsInHandP4().size();
+        }
 
-        // find number of cards in hand
-        // NEED TO ACCESS CP PLAYER HAND
-        int numCards = getCardsInHandP2.size();
-
-
+        // go through players cards & add playable cards to arrayList
         for (int i=0; i<numCards; i++){
-            // if color or number of cardsInHandP1[i] matches lastCardPlayed
-            if (lastCardPlayed.getColor() == getCardsInHandP2[i].getColor()){
+
+            // gets current card from correct player's deck
+            Card currentCard = null;
+            if (playerNum == 1){
+                currentCard = myState.getCardsInHandP1().get(i);
+            } else if (playerNum == 2){
+                currentCard = myState.getCardsInHandP2().get(i);
+            } else if (playerNum == 3){
+                currentCard = myState.getCardsInHandP3().get(i);
+            } else {
+                currentCard = myState.getCardsInHandP4().get(i);
+            }
+
+            // finds all playable cards and adds to list
+            if (lastCardPlayed.getColor() == currentCard.getColor()){
                 // color matches - add card
-                playableCards.add(getCardsInHandP2[i]);
-            } else if (lastCardPlayed.getNum() == getCardsInHandP2[i].getNum()){
+                playableCards.add(currentCard);
+            } else if (lastCardPlayed.getNum() == currentCard.getNum()){
                 // number matches - add card
-                playableCards.add(getCardsInHandP2[i]);
-            } else if (getCardsInHandP2[i].getNum() == -4 || getCardsInHandP2[i].getNum() == -5){
+                playableCards.add(currentCard);
+            } else if (currentCard.getNum() == -4 ||currentCard.getNum() == -5){
                 // wild card - add card
-                playableCards.add(getCardsInHandP2[i]);
+                playableCards.add(currentCard);
             } else {
                 // card is not playable
                 continue;
@@ -85,11 +98,17 @@ public class unoEasyCP extends GameComputerPlayer {
         // number of playable cards
         int numPlayable = playableCards.size();
 
+        if (numPlayable == 0){
+            // no playable cards - draw card & turn over
+            // NEED DRAWCARD METHOD TO BE COMPLETE
+            game.sendAction(new unoDrawCard(this));
+        }
+
         // random number chooses which card to play
         Random rndCard = new Random();
         int number = rndCard.nextInt(numPlayable);
 
-        // sends cardToPlay to be random one chosen
+        // sets cardToPlay to be random one chosen
         Card cardToPlay = playableCards.get(number);
 
         // sends action
