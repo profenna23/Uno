@@ -10,6 +10,15 @@ import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 
 import java.util.ArrayList;
 
+/**
+ * Hard uno computer player -
+ * Chooses a playable card from their hand according to a preset order:
+ * draw 2, skip, reverse, wild draw 4, wild, facecard
+ * to place on top of the discard pile.
+ *
+ * @author Chiara Profenna
+ * @version April 2021
+ */
 public class unoHardCP extends GameComputerPlayer {
 
     /**
@@ -29,23 +38,6 @@ public class unoHardCP extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
-
-        /**
-         * Implementation:
-         * - read the card on top of discard pile
-         * - make a new list of all playable cards
-         * - if list is empty:
-         *      - draw a card from the draw pile
-         * - else:
-         *      - if there is a special card, use that first following this order:
-         *          - Draw 2
-         *          - Skip
-         *          - Reverse
-         *      - if there are no special cards, try a wild in this order:
-         *          - Wild draw 4
-         *          - Wild regular color change
-         *      - if there are no special or wild cards, use a face card
-         */
 
         // verify info is an unoState object
         if (!(info instanceof GameState)) return;

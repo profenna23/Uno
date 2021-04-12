@@ -11,6 +11,14 @@ import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Easy uno computer player -
+ * Randomly chooses a playable card from their hand
+ * to place on top of the discard pile.
+ *
+ * @author Chiara Profenna
+ * @version April 2021
+ */
 public class unoEasyCP extends GameComputerPlayer {
 
     /**
@@ -30,17 +38,6 @@ public class unoEasyCP extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
-
-        /**
-         * Implementation:
-         * - read the card on top of discard pile
-         * - make a new list of all playable cards
-         * - if list is empty:
-         *      - draw a card from the draw pile
-         * - else:
-         *      - create a new random that will pick a number from 0-size of playable cards list
-         *      - Play the card that corresponds to the number
-         */
 
         // verify info is an unoState object
         if (!(info instanceof GameState)) return;
