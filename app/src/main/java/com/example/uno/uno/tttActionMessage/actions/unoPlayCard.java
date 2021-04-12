@@ -5,10 +5,8 @@ import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
 
 public class unoPlayCard extends GameAction {
-    public int player;
-    public int getPlayerTurn(){
-        return player;
-    }
+    private final
+
     /**
      * constructor for GameAction
      *
@@ -21,6 +19,7 @@ public class unoPlayCard extends GameAction {
         //onclick sends that command -- how do i implement this
         //local game will use the info to set the game
         super(player);
+
 
     }
 
