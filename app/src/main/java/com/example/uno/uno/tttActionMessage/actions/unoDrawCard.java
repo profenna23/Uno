@@ -7,22 +7,25 @@ import com.example.uno.game.GameFramework.players.GamePlayer;
 public class unoDrawCard extends GameAction {
     //public int player;
     //public int getPlayerTurn(){
-      //  return player;
+    //  return player;
     //}
+
+    private GamePlayer playerID;
+
     /**
      * constructor for GameAction
      *
-     * @param player the player who created the action
+     * @param playerID the player who created the action
      */
-    public unoDrawCard(GamePlayer player) {
+    public unoDrawCard(GamePlayer playerID) {
         //drawcard method in gamestate
         //which player is requesting, and this is who they are
 
-        super(player);
-
-
+        super(playerID);
+        this.playerID = playerID;
     }
-import com.example.uno.game.GameFramework.actionMessage.GameAction;
-
-public class unoDrawCard {
+    public GamePlayer getPlayerID(){
+        return playerID;
+    }
 }
+
