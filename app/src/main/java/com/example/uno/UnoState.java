@@ -91,7 +91,7 @@ public class UnoState extends GameState {
         // Shuffle
         Random rand = new Random();
         for (int i = 0; i < deckOfCards.size(); i++) {
-            int randomIdx = rand.nextInt(deckOfCards.size());
+            int randomIdx = rand.nextInt(deckOfCards.size()- 1);
             Card temp = deckOfCards.get(randomIdx);
             deckOfCards.set(randomIdx, deckOfCards.get(i));
             deckOfCards.set(i, temp);
@@ -167,6 +167,7 @@ public class UnoState extends GameState {
 
 
 
+
     }
 
     public int getPlayerTurn() {
@@ -204,5 +205,20 @@ public class UnoState extends GameState {
 
     public ArrayList<Card> getDrawPile() {
         return drawPile;
+    }
+    public void reshuffle() {
+        // Call when drawDeck is empty
+
+        Random rand = new Random();
+        for (int i = 1; i < discardPile.size(); i++) {
+            int randomIdx = rand.nextInt(discardPile.size());
+            Card temp = discardPile.get(randomIdx);
+            discardPile.set(randomIdx, discardPile.get(i));
+            discardPile.set(i, temp);
+
+            drawPile.add(discardPile.get(i));
+            discardPile.remove(i);
+        }
+
     }
 }
