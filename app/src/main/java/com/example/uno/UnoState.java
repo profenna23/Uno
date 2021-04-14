@@ -29,14 +29,7 @@ public class UnoState extends GameState {
     private ArrayList <Card> discardPile;
     private ArrayList<Card> drawPile;
 
-
-
     private int playerTurn;
-
-    
-
-
-
 
     public UnoState() {
 
@@ -49,10 +42,7 @@ public class UnoState extends GameState {
                     Card temp = new Card(k, j, "normal");
                     deckOfCards.add(temp);
                 }
-
             }
-
-
         }
 
         // Sets zero cards
@@ -68,6 +58,7 @@ public class UnoState extends GameState {
                 deckOfCards.add(temp);
             }
         }
+
         // Sets the reverse Cards
         for (int i = 84; i < 92; i++) {
             for (int j = 1; j <= 4; j++) {
@@ -75,6 +66,7 @@ public class UnoState extends GameState {
                 deckOfCards.add(temp);
             }
         }
+
         // Sets the draw 2 cards
         for (int i = 92; i < 100; i++) {
             for (int j = 1; j <= 4; j++) {
@@ -82,17 +74,18 @@ public class UnoState extends GameState {
                 deckOfCards.add(temp);
             }
         }
+
         // Sets the wild cards
         for (int i = 100; i < 104; i++) {
             Card temp = new Card(-4, -1, "wild");
             deckOfCards.add(temp);
         }
+
         // Sets the wildDraw4 cards
         for (int i = 104; i < 108; i++) {
             Card temp = new Card(-5, -1, "wildDraw4");
             deckOfCards.add(temp);
         }
-
 
         // Shuffle
         Random rand = new Random();
@@ -103,38 +96,35 @@ public class UnoState extends GameState {
             deckOfCards.set(i, temp);
         }
 
-
         discardPile.set(0, deckOfCards.get(0));
 
-        // Cards in hand equal [1-8]
+        // Cards in cpHand = [1-8]
         cardsInHandP1 = new ArrayList<Card>(7);
         for (int i = 0; i < cardsInHandP1.size(); i++) {
             cardsInHandP1.set(i, deckOfCards.get(1+i));
 
         }
 
-
+        // Cards in cpHand = [9-16]
         cardsInHandP2 = new ArrayList<Card>(7);
         for (int i = 0; i < cardsInHandP2.size(); i++) {
             cardsInHandP2.set(i, deckOfCards.get(9 + i));
 
         }
-        // Cards in cpHand = [9-16]
 
+        // Cards in cp3Hand = [17-24]
         cardsInHandP3 = new ArrayList<Card>(7);
         for (int i = 0; i < cardsInHandP2.size(); i++) {
             cardsInHandP2.set(i, deckOfCards.get(17 + i));
 
         }
-        // Cards in cp3Hand = [17-24]
 
+        // Cards in cp3Hand = [25-32]
         cardsInHandP4 = new ArrayList<Card>(7);
         for (int i = 0; i < cardsInHandP2.size(); i++) {
             cardsInHandP2.set(i, deckOfCards.get(25 + i));
 
         }
-        // Cards in cpHand - [25-32]
-
 
         drawPile = new ArrayList<Card>(76);
         for (int i = 0; i < drawPile.size(); i++) {
@@ -142,10 +132,10 @@ public class UnoState extends GameState {
 
         }
 
-
         playerTurn = 1;
 
     }
+
     public UnoState(UnoState other) {
         playerTurn = other.playerTurn;
         for(int i = 0; i < other.cardsInHandP1.size(); i++) {
@@ -166,13 +156,6 @@ public class UnoState extends GameState {
         for(int i = 0; i < other.drawPile.size(); i++) {
             drawPile.set(i, other.drawPile.get(i));
         }
-
-
-
-
-
-
-
     }
 
     public int getPlayerTurn() {
@@ -182,8 +165,7 @@ public class UnoState extends GameState {
     public ArrayList<Card> getCardsInHandP1() {
         return cardsInHandP1;
     }
-
-
+    
     public ArrayList<Card> getCardsInHandP2() {
         return cardsInHandP2;
     }
