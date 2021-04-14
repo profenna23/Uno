@@ -9,6 +9,12 @@ import com.example.uno.game.GameFramework.players.GamePlayer;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * UnoState class
+ *
+ * @@authors Chiara Profenna, John Nicholson, Saylene Hernandez, Megan Ly
+ * @version April 2021
+ */
 public class UnoState extends GameState {
     // ArrayList representing each players hands, needs to find out how many players there are
     private ArrayList<Card> cardsInHandP1;
