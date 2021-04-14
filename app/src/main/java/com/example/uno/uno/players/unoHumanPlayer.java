@@ -1,10 +1,11 @@
 package com.example.uno.uno.players;
 
-import android.view.MotionEvent;
+import android.graphics.Canvas;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.uno.R;
+import com.example.uno.UnoState;
 import com.example.uno.game.GameFramework.GameMainActivity;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
@@ -13,7 +14,6 @@ import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
-import com.example.uno.views.unoSurfaceView;
 
 public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListener, View.OnClickListener {
 
@@ -28,6 +28,9 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListe
 
     // the ID for the layout to use
     private int layoutId;
+
+    //the game's state
+    protected UnoState state;
 
     /**
      * constructor
@@ -52,6 +55,29 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListe
     public View getTopView() {
 
         return myActivity.findViewById(R.id.top_gui_layout);
+    }
+
+    //set's the class state
+    public void setState(UnoState state) {
+        this.state = state;
+    }
+
+    /**
+     * callback method, called whenever it's time to redraw frame
+     *
+     * @param g - the canvas to draw on
+     */
+
+    public void onDraw(Canvas g) {
+        //not sure what to pull here because tic tac toe has a board (we don't have that)
+
+        //state.getPlayerHandP1.get(i).getColor();
+
+        //if we don't have any state, nothing to draw so its null
+        if (state == null) {
+            return;
+        }
+
     }
 
     /**
