@@ -24,7 +24,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
     private static final String TAG = "UnoHumanPlayer";
 
     // the surface view
-    private unoSurfaceView surfaceView;
+    //private unoSurfaceView surfaceView;
 
     // the ID for the layout to use
     private int layoutId;
@@ -110,6 +110,12 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button exitButton = myActivity.findViewById(R.id.exitButton);
         exitButton.setOnClickListener(this);
 
+        Button restartButton = myActivity.findViewById(R.id.restartButton);
+        restartButton.setOnClickListener(this);
+
+        Button helpButton = myActivity.findViewById(R.id.helpButton);
+        helpButton.setOnClickListener(this);
+
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
     }
 
@@ -125,15 +131,24 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
         if (v.getId() == R.id.exitButton){
             // send action to exit
+            game.sendAction(new unoExit(this));
         }
+
+        if (v.getId() == R.id.restartButton){
+            // send action to restart game
+            game.sendAction(new unoRestart(this));
+        }
+
+        if (v.getId() == R.id.helpButton){
+            // send action to pull up help menu
+            game.sendAction(new unoHelp(this));
+        }
+
+
 
 
         game.sendAction(new unoPlayCard(this, cardToPlay));
 
-
-        game.sendAction(new unoExit(this));
-        game.sendAction(new unoRestart(this));
-        game.sendAction(new unoHelp(this));
     }
 
 

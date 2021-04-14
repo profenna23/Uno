@@ -7,6 +7,12 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Local unit tests, which will execute on the development machine (host).
+ *
+ * @@author Chiara Profenna
+ * @version April 2021
+ */
 public class UnoStateTest {
 
     @Test
