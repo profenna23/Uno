@@ -15,7 +15,7 @@ import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
 import com.example.uno.views.unoSurfaceView;
 
-public class unoHumanPlayer extends GameHumanPlayer implements View.OnTouchListener, View.OnClickListener {
+public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListener {
 
     // on clicks/taps - send the game a move (as in cp)
     // this class is the actual GUI interface - links to surfaceView
