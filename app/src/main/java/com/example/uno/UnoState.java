@@ -9,6 +9,12 @@ import com.example.uno.game.GameFramework.players.GamePlayer;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * UnoState class
+ *
+ * @@authors Chiara Profenna, John Nicholson, Saylene Hernandez, Megan Ly
+ * @version April 2021
+ */
 public class UnoState extends GameState {
     // ArrayList representing each players hands, needs to find out how many players there are
     private ArrayList<Card> cardsInHandP1;
@@ -62,6 +68,7 @@ public class UnoState extends GameState {
                 deckOfCards.add(temp);
             }
         }
+
         // Sets the reverse Cards
         for (int i = 84; i < 92; i++) {
             for (int j = 1; j <= 4; j++) {
@@ -69,6 +76,7 @@ public class UnoState extends GameState {
                 deckOfCards.add(temp);
             }
         }
+
         // Sets the draw 2 cards
         for (int i = 92; i < 100; i++) {
             for (int j = 1; j <= 4; j++) {
@@ -91,7 +99,7 @@ public class UnoState extends GameState {
         // Shuffle
         Random rand = new Random();
         for (int i = 0; i < deckOfCards.size(); i++) {
-            int randomIdx = rand.nextInt(deckOfCards.size()- 1);
+            int randomIdx = rand.nextInt(deckOfCards.size());
             Card temp = deckOfCards.get(randomIdx);
             deckOfCards.set(randomIdx, deckOfCards.get(i));
             deckOfCards.set(i, temp);
@@ -115,6 +123,7 @@ public class UnoState extends GameState {
         }
         // Cards in cpHand = [9-16]
 
+        // Cards in cp3Hand = [17-24]
         cardsInHandP3 = new ArrayList<Card>(7);
         for (int i = 0; i < cardsInHandP2.size(); i++) {
             cardsInHandP2.set(i, deckOfCards.get(17 + i));
@@ -122,6 +131,7 @@ public class UnoState extends GameState {
         }
         // Cards in cp3Hand = [17-24]
 
+        // Cards in cp3Hand = [25-32]
         cardsInHandP4 = new ArrayList<Card>(7);
         for (int i = 0; i < cardsInHandP2.size(); i++) {
             cardsInHandP2.set(i, deckOfCards.get(25 + i));
@@ -140,6 +150,7 @@ public class UnoState extends GameState {
         playerTurn = 1;
 
     }
+
     public UnoState(UnoState other) {
         playerTurn = other.playerTurn;
         for(int i = 0; i < other.cardsInHandP1.size(); i++) {
@@ -160,7 +171,6 @@ public class UnoState extends GameState {
         for(int i = 0; i < other.drawPile.size(); i++) {
             drawPile.set(i, other.drawPile.get(i));
         }
-
 
 
 
