@@ -16,6 +16,10 @@ import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListener {
 
     // on clicks/taps - send the game a move (as in cp)
@@ -117,16 +121,47 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button helpButton = myActivity.findViewById(R.id.helpButton);
         helpButton.setOnClickListener(this);
 
+
+
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
 
+        //sets list for card numbers and colors
+        List<String> cardValues, cardColors;
+        cardValues = new ArrayList<>();
+        cardColors = new ArrayList<>();
+
+        //add all the card numbers
+        cardValues.add("0");
+        cardValues.add("1");
+        cardValues.add("2");
+        cardValues.add("3");
+        cardValues.add("4");
+        cardValues.add("5");
+        cardValues.add("6");
+        cardValues.add("7");
+        cardValues.add("8");
+        cardValues.add("9");
+        cardValues.add("Skip");
+        cardValues.add("Reverse");
+        cardValues.add("+2");
+        cardValues.add("WILD");
+        cardValues.add("WILD DRAW FOUR");
+
+        //add all the card colors and wild
+        cardColors.add("Blue");
+        cardColors.add("Red");
+        cardColors.add("Yellow");
+        cardColors.add("Green");
+
+
         //setting the hand's on click listeners
-        ImageView firstCard = (ImageView)activity.findViewById(R.id.card1);
-        ImageView secondCard = (ImageView)activity.findViewById(R.id.card2);
-        ImageView thirdCard = (ImageView)activity.findViewById(R.id.card3);
-        ImageView fourthCard = (ImageView)activity.findViewById(R.id.card4);
-        ImageView fifthCard = (ImageView)activity.findViewById(R.id.card5);
-        ImageView sixthCard = (ImageView)activity.findViewById(R.id.card6);
-        ImageView seventhCard = (ImageView)activity.findViewById(R.id.card7);
+        Button firstCard = (Button)activity.findViewById(R.id.card1);
+        Button secondCard = (Button) activity.findViewById(R.id.card2);
+        Button thirdCard = (Button)activity.findViewById(R.id.card3);
+        Button fourthCard = (Button)activity.findViewById(R.id.card4);
+        Button fifthCard = (Button)activity.findViewById(R.id.card5);
+        Button sixthCard = (Button)activity.findViewById(R.id.card6);
+        Button seventhCard = (Button)activity.findViewById(R.id.card7);
         firstCard.setOnClickListener(this);
         secondCard.setOnClickListener(this);
         thirdCard.setOnClickListener(this);
@@ -168,6 +203,21 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
         game.sendAction(new unoPlayCard(this, cardToPlay));
 
+        firstCard.setOnClickListener(new View.OnClickListener()) {
+            @Override
+                    public void onClickView(View v) {
+                //get random card
+                Random r = new Random();
+                String randomValue = cardValues.get(r.nextInt(cardValues.size()));
+                String randomColor = cardColor.get(r.nextInt(cardColors.size()));
+            }
+        }
+
+        Random r = new Random();
+        String randomCard = cardValues.get(r.nextInt(cardValues.size()));
+        St
+
+        firstCard.setText();
     }
 
 
