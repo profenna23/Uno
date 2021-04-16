@@ -165,7 +165,7 @@ public class UnoState extends GameState {
     public ArrayList<Card> getCardsInHandP1() {
         return cardsInHandP1;
     }
-    
+
     public ArrayList<Card> getCardsInHandP2() {
         return cardsInHandP2;
     }
