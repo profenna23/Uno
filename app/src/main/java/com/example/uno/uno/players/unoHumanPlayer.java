@@ -3,6 +3,7 @@ package com.example.uno.uno.players;
 import android.graphics.Canvas;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.uno.R;
 import com.example.uno.UnoState;
@@ -117,6 +118,22 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         helpButton.setOnClickListener(this);
 
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
+
+        //setting the hand's on click listeners
+        ImageView firstCard = (ImageView)activity.findViewById(R.id.card1);
+        ImageView secondCard = (ImageView)activity.findViewById(R.id.card2);
+        ImageView thirdCard = (ImageView)activity.findViewById(R.id.card3);
+        ImageView fourthCard = (ImageView)activity.findViewById(R.id.card4);
+        ImageView fifthCard = (ImageView)activity.findViewById(R.id.card5);
+        ImageView sixthCard = (ImageView)activity.findViewById(R.id.card6);
+        ImageView seventhCard = (ImageView)activity.findViewById(R.id.card7);
+        firstCard.setOnClickListener(this);
+        secondCard.setOnClickListener(this);
+        thirdCard.setOnClickListener(this);
+        fourthCard.setOnClickListener(this);
+        fifthCard.setOnClickListener(this);
+        sixthCard.setOnClickListener(this);
+        seventhCard.setOnClickListener(this);
     }
 
     /**
@@ -143,6 +160,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             // send action to pull up help menu
             game.sendAction(new unoHelp(this));
         }
+
+
 
 
 
