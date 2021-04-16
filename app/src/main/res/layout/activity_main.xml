@@ -154,54 +154,54 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <ImageButton
-                android:id="@+id/imageButton"
+            <Button
+                android:id="@+id/card1"
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
-                android:src="@android:drawable/arrow_down_float" />
+                android:text="." />
 
-            <ImageButton
-                android:id="@+id/imageButton2"
+            <Button
+                android:id="@+id/card2"
                 android:layout_width="154dp"
-                android:layout_height="match_parent"
+                android:layout_height="229dp"
                 android:layout_weight="1"
-                android:src="@android:drawable/arrow_up_float" />
+                android:text="." />
 
-            <ImageButton
-                android:id="@+id/imageButton3"
+            <Button
+                android:id="@+id/card3"
                 android:layout_width="154dp"
-                android:layout_height="match_parent"
+                android:layout_height="229dp"
                 android:layout_weight="1"
-                android:src="@android:drawable/arrow_down_float" />
+                android:text="." />
 
-            <ImageButton
-                android:id="@+id/imageButton4"
+            <Button
+                android:id="@+id/card4"
                 android:layout_width="154dp"
-                android:layout_height="match_parent"
+                android:layout_height="229dp"
                 android:layout_weight="1"
-                android:src="@android:drawable/arrow_up_float" />
+                android:text="." />
 
-            <ImageButton
-                android:id="@+id/imageButton5"
+            <Button
+                android:id="@+id/card5"
                 android:layout_width="154dp"
-                android:layout_height="match_parent"
+                android:layout_height="229dp"
                 android:layout_weight="1"
-                android:src="@android:drawable/arrow_down_float" />
+                android:text="." />
 
-            <ImageButton
-                android:id="@+id/imageButton6"
+            <Button
+                android:id="@+id/card6"
                 android:layout_width="154dp"
-                android:layout_height="match_parent"
+                android:layout_height="229dp"
                 android:layout_weight="1"
-                android:src="@android:drawable/arrow_up_float" />
+                android:text="." />
 
-            <ImageButton
-                android:id="@+id/imageButton7"
+            <Button
+                android:id="@+id/card7"
                 android:layout_width="154dp"
-                android:layout_height="match_parent"
+                android:layout_height="229dp"
                 android:layout_weight="1"
-                android:src="@android:drawable/arrow_down_float" />
+                android:text="." />
 
         </LinearLayout>
 
@@ -244,6 +244,14 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:text="HELP" />
+
+        <Button
+            android:id="@+id/drawButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="DRAW" />
 
     </LinearLayout>
 

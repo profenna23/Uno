@@ -40,10 +40,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
     /**
      * constructor
      *
-     * @param name
-     * 		the player's name
-     * @param layoutId
-     *      the id of the layout to use
+     * @param name     the player's name
+     * @param layoutId the id of the layout to use
      */
     public unoHumanPlayer(String name, int layoutId) {
         super(name);
@@ -53,8 +51,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
     /**
      * returns the GUI's top view
      *
-     * @return
-     * 		the GUI's top view
+     * @return the GUI's top view
      */
     @Override
     public View getTopView() {
@@ -88,15 +85,14 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
     /**
      * Callback method, called when player gets a message
      *
-     * @param info
-     * 		the message
+     * @param info the message
      */
     @Override
     public void receiveInfo(GameInfo info) {
         // draw method - updates screen
         // if gameinfo instanceof gamestate
 
-        if (info instanceof GameState){
+        if (info instanceof GameState) {
             // then look at gamestate to figure out what screen should display
             // anything to be drawn - in this method
         }
@@ -121,6 +117,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button helpButton = myActivity.findViewById(R.id.helpButton);
         helpButton.setOnClickListener(this);
 
+        Button drawButton = myActivity.findViewById(R.id.drawButton);
+        drawButton.setOnClickListener(this);
 
 
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
@@ -153,15 +151,17 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         cardColors.add("Yellow");
         cardColors.add("Green");
 
+        Button cardOne;
+
 
         //setting the hand's on click listeners
-        Button firstCard = (Button)activity.findViewById(R.id.card1);
+        Button firstCard = (Button) activity.findViewById(R.id.card1);
         Button secondCard = (Button) activity.findViewById(R.id.card2);
-        Button thirdCard = (Button)activity.findViewById(R.id.card3);
-        Button fourthCard = (Button)activity.findViewById(R.id.card4);
-        Button fifthCard = (Button)activity.findViewById(R.id.card5);
-        Button sixthCard = (Button)activity.findViewById(R.id.card6);
-        Button seventhCard = (Button)activity.findViewById(R.id.card7);
+        Button thirdCard = (Button) activity.findViewById(R.id.card3);
+        Button fourthCard = (Button) activity.findViewById(R.id.card4);
+        Button fifthCard = (Button) activity.findViewById(R.id.card5);
+        Button sixthCard = (Button) activity.findViewById(R.id.card6);
+        Button seventhCard = (Button) activity.findViewById(R.id.card7);
         firstCard.setOnClickListener(this);
         secondCard.setOnClickListener(this);
         thirdCard.setOnClickListener(this);
@@ -174,51 +174,55 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
     /**
      * callback method when the a button is played. We're
      * looking for a button clicked
-     *
      */
     public void onClick(View v) {
         // which view, which button pressed
         // if button = card1
         // then send action to game that plays card
 
-        if (v.getId() == R.id.exitButton){
+        if (v.getId() == R.id.exitButton) {
             // send action to exit
             game.sendAction(new unoExit(this));
         }
 
-        if (v.getId() == R.id.restartButton){
+        if (v.getId() == R.id.restartButton) {
             // send action to restart game
             game.sendAction(new unoRestart(this));
         }
 
-        if (v.getId() == R.id.helpButton){
+        if (v.getId() == R.id.helpButton) {
             // send action to pull up help menu
             game.sendAction(new unoHelp(this));
         }
 
 
+        //game.sendAction(new unoPlayCard(this, cardToPlay));
 
 
-
-
-        game.sendAction(new unoPlayCard(this, cardToPlay));
-
-        firstCard.setOnClickListener(new View.OnClickListener()) {
+        /**
+         * Tried to make onClick method so that when the user clicks the draw button
+         * it automatically changes the buttons to new cards,
+         * not sure how John had this implemented in local game so couldn't figure it out.
+         *
+         * SIDE NOTE:
+         *      For the actual cards the player starts with we need a button to start the game that will
+         *      initialize these cards so that we can randomize the button text?
+         *
+         *      Youtube VID: https://www.youtube.com/watch?v=Jn1e7Vkd2tk
+         */
+        if (v.getId() == R.id.drawButton) {
             @Override
-                    public void onClickView(View v) {
-                //get random card
+            public void onClick(View v) {
                 Random r = new Random();
                 String randomValue = cardValues.get(r.nextInt(cardValues.size()));
                 String randomColor = cardColor.get(r.nextInt(cardColors.size()));
+
+
+
             }
+
         }
 
-        Random r = new Random();
-        String randomCard = cardValues.get(r.nextInt(cardValues.size()));
-        St
 
-        firstCard.setText();
     }
-
-
 }
