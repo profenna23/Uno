@@ -116,4 +116,39 @@ public class UnoStateTest {
         assertEquals(handP4.get(2), card3);
     }
 
+    @Test
+    public void testPlayerHand() {
+        // Tests to make sure the game is setup properly by comparing the hand with the deckOfCards
+        // John
+        UnoState state = new UnoState();
+        assertEquals(state.getCardsInHandP1().get(0), state.getDeckOfCards().get(1));
+        assertEquals(state.getCardsInHandP1().get(6), state.getDeckOfCards().get(7));
+        assertEquals(state.getCardsInHandP1().get(3), state.getDeckOfCards().get(4));
+    }
+    @Test
+    public void testCardInPlay() {
+        // Tests to make sure the game is setup properly by comparing the cardinplay with the deckOfCards
+        // John
+        UnoState state = new UnoState();
+        assertEquals(state.getDiscardPile().get(0), state.getDeckOfCards().get(0));
+    }
+    @Test
+    public void testPlayerTurn() {
+        // Tests to make sure the game is setup with turn at 1
+        // John
+        UnoState state = new UnoState();
+        assertEquals(state.getPlayerTurn(), 1);
+    }
+    @Test
+    public void testDrawPile() {
+        // Tests the drawPile to make sure it is setup properly
+        // John
+        UnoState state = new UnoState();
+        assertEquals(state.getDrawPile().get(0), state.getDeckOfCards().get(33));
+        assertEquals(state.getDrawPile().get(30), state.getDeckOfCards().get(63));
+        assertEquals(state.getDrawPile().get(75), state.getDeckOfCards().get(107));
+
+
+    }
+
 }

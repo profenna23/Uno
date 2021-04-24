@@ -89,7 +89,7 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 3) {
-                (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed); // 0 needs to be where in the hand the card has been played
+                (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                 state.getCardsInHandP4().remove(0);
                 state.getCardsInHandP4().trimToSize();
                 state.setPlayerTurn(1);
@@ -97,7 +97,7 @@ public class UnoLocalGame extends LocalGame {
             }
         }
         if(action instanceof unoDrawCard) {
-            unoPlayCard playCard = (unoDrawCard) action;
+            unoDrawCard playCard = (unoDrawCard) action;
             UnoState state = (UnoState) super.state;
             int playerID = getPlayerIdx(playCard.getPlayer());
 

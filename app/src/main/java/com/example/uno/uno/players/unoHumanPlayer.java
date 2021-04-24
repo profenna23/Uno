@@ -210,18 +210,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
          *
          *      Youtube VID: https://www.youtube.com/watch?v=Jn1e7Vkd2tk
          */
-        if (v.getId() == R.id.drawButton) {
-            @Override
-            public void onClick(View v) {
-                Random r = new Random();
-                String randomValue = cardValues.get(r.nextInt(cardValues.size()));
-                String randomColor = cardColor.get(r.nextInt(cardColors.size()));
 
-
-
-            }
-
-        }
 
 
     }
