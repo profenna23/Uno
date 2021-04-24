@@ -150,5 +150,14 @@ public class UnoStateTest {
 
 
     }
+    @Test
+    public void testCPUHand1() {
+        // Tests the first CPU hand
+        // John
+        UnoState state = new UnoState();
+        assertEquals(state.getCardsInHandP2().get(0), state.getDeckOfCards().get(9));
+        assertEquals(state.getCardsInHandP2().get(6), state.getDeckOfCards().get(16));
+        assertEquals(state.getCardsInHandP2().get(3), state.getDeckOfCards().get(12));
+
 
 }
