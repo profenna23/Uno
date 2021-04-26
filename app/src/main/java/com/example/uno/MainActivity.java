@@ -26,7 +26,9 @@ public class MainActivity extends GameMainActivity {
      */
     @Override
     public GameConfig createDefaultConfig(){
+
         ArrayList<GamePlayerType> playerTypes = new ArrayList <>();
+
 
         playerTypes.add(new GamePlayerType("Local Human Player (blue-yellow)") {
             public GamePlayer createPlayer(String name) {
