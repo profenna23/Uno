@@ -66,7 +66,7 @@ public class UnoLocalGame extends LocalGame {
            int cardPlayed = playCard.cardPlayed();
            int playerID = getPlayerIdx(playCard.getPlayer());
 
-           if(playerID == 0 ) {
+           if(playerID == 0) {
                (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                state.getCardsInHandP1().remove(0);
                state.getCardsInHandP1().trimToSize();

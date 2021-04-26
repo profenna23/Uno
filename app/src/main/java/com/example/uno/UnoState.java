@@ -208,4 +208,8 @@ public class UnoState extends GameState {
     public ArrayList<Card> getDrawPile() {
         return drawPile;
     }
+
+    public ArrayList<Card> getDeckOfCards() {
+        return deckOfCards;
+    }
 }
