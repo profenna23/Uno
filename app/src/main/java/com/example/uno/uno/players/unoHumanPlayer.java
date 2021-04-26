@@ -1,6 +1,7 @@
 package com.example.uno.uno.players;
 
 import android.graphics.Canvas;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -128,13 +129,13 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
 
         //setting the hand's on click listeners
-        Button firstCard = (Button)activity.findViewById(R.id.p1card1);
-        Button secondCard = (Button)activity.findViewById(R.id.p1card2);
-        Button thirdCard = (Button)activity.findViewById(R.id.p1card3);
-        Button fourthCard = (Button)activity.findViewById(R.id.p1card4);
-        Button fifthCard = (Button)activity.findViewById(R.id.p1card5);
-        Button sixthCard = (Button)activity.findViewById(R.id.p1card6);
-        Button seventhCard = (Button)activity.findViewById(R.id.p1card7);
+        ImageButton firstCard = (ImageButton)activity.findViewById(R.id.p1card1);
+        ImageButton secondCard = (ImageButton)activity.findViewById(R.id.p1card2);
+        ImageButton thirdCard = (ImageButton)activity.findViewById(R.id.p1card3);
+        ImageButton fourthCard = (ImageButton)activity.findViewById(R.id.p1card4);
+        ImageButton fifthCard = (ImageButton)activity.findViewById(R.id.p1card5);
+        ImageButton sixthCard = (ImageButton)activity.findViewById(R.id.p1card6);
+        ImageButton seventhCard = (ImageButton)activity.findViewById(R.id.p1card7);
         firstCard.setOnClickListener(this);
         secondCard.setOnClickListener(this);
         thirdCard.setOnClickListener(this);
@@ -142,6 +143,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         fifthCard.setOnClickListener(this);
         sixthCard.setOnClickListener(this);
         seventhCard.setOnClickListener(this);
+        Log.e("setAsGUI", "finished linking clicks");
     }
 
     /**
@@ -149,6 +151,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
      * looking for a button clicked
      *
      */
+    @Override
     public void onClick(View v) {
         // which view, which button pressed
         // if button = card1
@@ -170,8 +173,10 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         }
 
         if(v.getId() == R.id.p1card1){
+            Log.e("onClick", "sending human card 0");
             game.sendAction(new unoPlayCard(this, 0));
         }
+        Log.e("onClick", "did nothign w click");
 
         //same for all cards
 

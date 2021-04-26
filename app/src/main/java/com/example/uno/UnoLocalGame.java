@@ -1,5 +1,7 @@
 package com.example.uno;
 
+import android.util.Log;
+
 import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
@@ -60,7 +62,9 @@ public class UnoLocalGame extends LocalGame {
 
     @Override
     protected boolean makeMove(GameAction action) {
-        if(action instanceof unoPlayCard) {
+        int thisISATest = 2;
+        thisISATest = 3;
+        if(action instanceof unoPlayCard && thisISATest == 3) {
            unoPlayCard playCard = (unoPlayCard) action;
            UnoState state = (UnoState) super.state;
            int cardPlayed = playCard.cardPlayed();
