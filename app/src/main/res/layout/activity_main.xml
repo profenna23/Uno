@@ -154,49 +154,49 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card1"
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="Button" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card2"
                 android:layout_width="154dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Button" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card3"
                 android:layout_width="154dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Button" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card4"
                 android:layout_width="154dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Button" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card5"
                 android:layout_width="154dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Button" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card6"
                 android:layout_width="154dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Button" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card7"
                 android:layout_width="154dp"
                 android:layout_height="match_parent"

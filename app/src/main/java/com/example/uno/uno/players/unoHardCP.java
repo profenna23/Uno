@@ -39,6 +39,8 @@ public class unoHardCP extends GameComputerPlayer {
     @Override
     protected void receiveInfo(GameInfo info) {
 
+        int cardToPlayNum = -1;
+
         // verify info is an unoState object
         if (!(info instanceof GameState)) return;
         UnoState myState = (UnoState)info;
@@ -110,6 +112,7 @@ public class unoHardCP extends GameComputerPlayer {
             if (playableCards.get(i).getNum()  == -3){
                 // if there is a draw 2 card - play it
                 cardToPlay = playableCards.get(i);
+                cardToPlayNum = i;
             }
 
         }
@@ -120,6 +123,7 @@ public class unoHardCP extends GameComputerPlayer {
             if (cardToPlay == null && playableCards.get(i).getNum() == -1){
                 // if there is a skip card - play it
                 cardToPlay = playableCards.get(i);
+                cardToPlayNum = i;
             }
 
         }
@@ -130,6 +134,7 @@ public class unoHardCP extends GameComputerPlayer {
             if (cardToPlay == null && playableCards.get(i).getNum() == -2){
                 // if there is a reverse card - play it
                 cardToPlay = playableCards.get(i);
+                cardToPlayNum = i;
             }
 
         }
@@ -140,6 +145,7 @@ public class unoHardCP extends GameComputerPlayer {
             if (cardToPlay == null && playableCards.get(i).getNum() == -5){
                 // if there is a wild draw 4 card - play it
                 cardToPlay = playableCards.get(i);
+                cardToPlayNum = i;
             }
 
         }
@@ -150,6 +156,7 @@ public class unoHardCP extends GameComputerPlayer {
             if (cardToPlay == null && playableCards.get(i).getNum() == -4){
                 // if there is a wild card - play it
                 cardToPlay = playableCards.get(i);
+                cardToPlayNum = i;
             }
 
         }
@@ -160,12 +167,13 @@ public class unoHardCP extends GameComputerPlayer {
             if (cardToPlay == null && playableCards.get(i).getNum() > 0){
                 // if there is a face card - play it
                 cardToPlay = playableCards.get(i);
+                cardToPlayNum = i;
             }
 
         }
 
         // sends action
-        game.sendAction(new unoPlayCard(this, cardToPlay));
+        game.sendAction(new unoPlayCard(this, cardToPlayNum));
 
     }
 

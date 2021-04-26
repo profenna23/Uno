@@ -63,7 +63,7 @@ public class UnoLocalGame extends LocalGame {
         if(action instanceof unoPlayCard) {
            unoPlayCard playCard = (unoPlayCard) action;
            UnoState state = (UnoState) super.state;
-           int cardPlayed = playCard.getCardtoPlay();
+           int cardPlayed = playCard.cardPlayed();
            int playerID = getPlayerIdx(playCard.getPlayer());
 
            if(playerID == 0 ) {
@@ -89,7 +89,7 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 3) {
-                (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed); // 0 needs to be where in the hand the card has been played
+                (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                 state.getCardsInHandP4().remove(0);
                 state.getCardsInHandP4().trimToSize();
                 state.setPlayerTurn(1);
@@ -97,7 +97,7 @@ public class UnoLocalGame extends LocalGame {
             }
         }
         if(action instanceof unoDrawCard) {
-            unoPlayCard playCard = (unoDrawCard) action;
+            unoDrawCard playCard = (unoDrawCard) action;
             UnoState state = (UnoState) super.state;
             int playerID = getPlayerIdx(playCard.getPlayer());
 
@@ -110,7 +110,7 @@ public class UnoLocalGame extends LocalGame {
             if(playerID == 1) {
                 state.getCardsInHandP2().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
-                state.getDrawPile().trimToSize()
+                state.getDrawPile().trimToSize();
                 return true;
             }
             if(playerID == 2) {
@@ -147,18 +147,13 @@ public class UnoLocalGame extends LocalGame {
     }
 
     @Override
-    protected boolean getHelp(GameAction action) {
-        if(action instanceof unoHelp) {
-
-        }
+    protected boolean unoRestart(GameAction action) {
         return false;
     }
 
     @Override
-    protected boolean gameRestart(GameAction action) {
-        if(action instanceof unoRestart){
-
-        }
+    protected boolean unoHelp(GameAction action) {
         return false;
     }
+
 }

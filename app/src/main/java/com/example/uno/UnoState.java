@@ -34,6 +34,7 @@ public class UnoState extends GameState {
     public UnoState() {
 
         deckOfCards = new ArrayList<Card>(108);
+        discardPile = new ArrayList<>();
         // Set each card in deck
         // Loop for each normal color card from 1-9
         for (int i = 0; i < 72; i++) {
@@ -134,13 +135,22 @@ public class UnoState extends GameState {
 
         playerTurn = 1;
 
+        // sets every image to green reverse
+        for(int i=0; i<deckOfCards.size(); i++){
+            deckOfCards.get(i).setResId(R.drawable.green_reverse);
+        }
+
     }
 
     public UnoState(UnoState other) {
         playerTurn = other.playerTurn;
+        cardsInHandP1 = new ArrayList<>();
         for(int i = 0; i < other.cardsInHandP1.size(); i++) {
-            cardsInHandP1.set(i, other.cardsInHandP1.get(i));
+            cardsInHandP1.add(new Card(other.cardsInHandP1.get(i)));
+            //cardsInHandP1.set(i, other.cardsInHandP1.get(i));
         }
+
+        // same as P1
         for(int i = 0; i < other.cardsInHandP2.size(); i++) {
             cardsInHandP2.set(i, other.cardsInHandP2.get(i));
         }
@@ -150,6 +160,11 @@ public class UnoState extends GameState {
         for(int i = 0; i < other.cardsInHandP4.size(); i++) {
             cardsInHandP4.set(i, other.cardsInHandP4.get(i));
         }
+
+        for(int i = 0; i < other.deckOfCards.size(); i++) {
+            deckOfCards.set(i, other.deckOfCards.get(i));
+        }
+
         for(int i = 0; i < other.discardPile.size(); i++) {
             discardPile.set(i, other.discardPile.get(i));
         }

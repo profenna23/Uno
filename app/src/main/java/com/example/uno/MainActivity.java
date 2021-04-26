@@ -26,11 +26,11 @@ public class MainActivity extends GameMainActivity {
      */
     @Override
     public GameConfig createDefaultConfig(){
-        ArrayList<GamePlayerType> playerTypes = new ArrayList <~>();
+        ArrayList<GamePlayerType> playerTypes = new ArrayList <>();
 
         playerTypes.add(new GamePlayerType("Local Human Player (blue-yellow)") {
             public GamePlayer createPlayer(String name) {
-                return new unoHumanPlayer(name, R.layout.uno_human_player1);
+                return new unoHumanPlayer(name, R.layout.activity_main);
             }
         });
 
