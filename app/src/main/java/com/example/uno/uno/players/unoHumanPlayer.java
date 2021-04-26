@@ -99,10 +99,12 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             // anything to be drawn - in this method
             UnoState theState = (UnoState)info;
 
+                // this draws the 1st card in players hand
                 if (theState.getCardsInHandP1().size() >= 1){
                     ImageButton cardButton = myActivity.findViewById(R.id.p1card1);
                     cardButton.setImageResource(theState.getCardsInHandP1().get(0).getResId());
                 }
+                // to do: same as above - show all cards plus discardPile
 
         }
 

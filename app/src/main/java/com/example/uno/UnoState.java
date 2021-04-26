@@ -86,7 +86,11 @@ public class UnoState extends GameState {
         for (int i = 104; i < 108; i++) {
             Card temp = new Card(-5, -1, "wildDraw4");
             deckOfCards.add(temp);
+            // set resource for card
         }
+
+        // set all cards & images ^^^^
+        // no capitals/spaces in file names
 
         // Shuffle
         Random rand = new Random();
@@ -133,8 +137,9 @@ public class UnoState extends GameState {
 
         }
 
-        playerTurn = 1;
+        playerTurn = 0;
 
+        // to do: remove this code
         // sets every image to green reverse
         for(int i=0; i<deckOfCards.size(); i++){
             deckOfCards.get(i).setResId(R.drawable.green_reverse);
