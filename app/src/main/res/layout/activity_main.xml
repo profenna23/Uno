@@ -154,28 +154,65 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/p1card1"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
-                android:backgroundTint="#FFEB3B"
-                android:text="7"
-                android:textColor="#000000"
-                android:textSize="60dp"
-                android:textStyle="bold"
-                app:iconTint="#00F44336" />
+                android:text="." />
 
-            <Button
+
+            <ImageButton
                 android:id="@+id/p1card2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+
+                android:layout_width="154dp"
+                android:layout_height="229dp"
                 android:layout_weight="1"
-                android:backgroundTint="#3F51B5"
-                android:text="REVERSE"
-                android:textColor="#000000"
-                android:textSize="25dp"
-                android:textStyle="bold" />
+                android:text="." />
+
+
+            <ImageButton
+                android:id="@+id/p1card3"
+
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:layout_weight="1"
+                android:text="." />
+
+            <ImageButton
+                android:id="@+id/p1card4"
+
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:layout_weight="1"
+                android:text="." />
+
+
+            <ImageButton
+                android:id="@+id/p1card5"
+
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:layout_weight="1"
+                android:text="." />
+
+
+            <ImageButton
+                android:id="@+id/p1card6"
+
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:layout_weight="1"
+                android:text="." />
+
+            <ImageButton
+                android:id="@+id/p1card7"
+
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:layout_weight="1"
+                android:text="." />
 
         </LinearLayout>
 
@@ -218,6 +255,14 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:text="HELP" />
+
+        <Button
+            android:id="@+id/drawButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="DRAW" />
 
     </LinearLayout>
 

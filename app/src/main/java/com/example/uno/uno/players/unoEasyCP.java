@@ -109,7 +109,7 @@ public class unoEasyCP extends GameComputerPlayer {
         Card cardToPlay = playableCards.get(number);
 
         // sends action
-        game.sendAction(new unoPlayCard(this, cardToPlay));
+        game.sendAction(new unoPlayCard(this, number));
 
     }
 }
