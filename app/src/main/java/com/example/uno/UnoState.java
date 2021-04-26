@@ -86,7 +86,11 @@ public class UnoState extends GameState {
         for (int i = 104; i < 108; i++) {
             Card temp = new Card(-5, -1, "wildDraw4");
             deckOfCards.add(temp);
+            // set resource for card
         }
+
+        // set all cards & images ^^^^
+        // no capitals/spaces in file names
 
         // Shuffle
         Random rand = new Random();
@@ -97,44 +101,45 @@ public class UnoState extends GameState {
             deckOfCards.set(i, temp);
         }
 
-        discardPile.set(0, deckOfCards.get(0));
+        discardPile.add(deckOfCards.get(0));
 
         // Cards in cpHand = [1-8]
         cardsInHandP1 = new ArrayList<Card>(7);
-        for (int i = 0; i < cardsInHandP1.size(); i++) {
-            cardsInHandP1.set(i, deckOfCards.get(1+i));
+        for (int i = 0; i < 7; i++) {
+            cardsInHandP1.add(i, deckOfCards.get(1+i));
 
         }
 
         // Cards in cpHand = [9-16]
         cardsInHandP2 = new ArrayList<Card>(7);
-        for (int i = 0; i < cardsInHandP2.size(); i++) {
-            cardsInHandP2.set(i, deckOfCards.get(9 + i));
+        for (int i = 0; i < 7; i++) {
+            cardsInHandP2.add(i, deckOfCards.get(9 + i));
 
         }
 
         // Cards in cp3Hand = [17-24]
         cardsInHandP3 = new ArrayList<Card>(7);
-        for (int i = 0; i < cardsInHandP2.size(); i++) {
-            cardsInHandP2.set(i, deckOfCards.get(17 + i));
+        for (int i = 0; i < 7; i++) {
+            cardsInHandP3.add(i, deckOfCards.get(17 + i));
 
         }
 
         // Cards in cp3Hand = [25-32]
         cardsInHandP4 = new ArrayList<Card>(7);
-        for (int i = 0; i < cardsInHandP2.size(); i++) {
-            cardsInHandP2.set(i, deckOfCards.get(25 + i));
+        for (int i = 0; i < 7; i++) {
+            cardsInHandP4.add(i, deckOfCards.get(25 + i));
 
         }
 
         drawPile = new ArrayList<Card>(76);
-        for (int i = 0; i < drawPile.size(); i++) {
-            drawPile.set(i, deckOfCards.get(33 + i));
+        for (int i = 0; i < 76; i++) {
+            drawPile.add(i, deckOfCards.get(33 + i));
 
         }
 
-        playerTurn = 1;
+        playerTurn = 0;
 
+        // to do: remove this code
         // sets every image to green reverse
         for(int i=0; i<deckOfCards.size(); i++){
             deckOfCards.get(i).setResId(R.drawable.green_reverse);
@@ -144,6 +149,7 @@ public class UnoState extends GameState {
 
     public UnoState(UnoState other) {
         playerTurn = other.playerTurn;
+
         cardsInHandP1 = new ArrayList<>();
         for(int i = 0; i < other.cardsInHandP1.size(); i++) {
             cardsInHandP1.add(new Card(other.cardsInHandP1.get(i)));
@@ -151,25 +157,37 @@ public class UnoState extends GameState {
         }
 
         // same as P1
+        cardsInHandP2 = new ArrayList<>();
         for(int i = 0; i < other.cardsInHandP2.size(); i++) {
-            cardsInHandP2.set(i, other.cardsInHandP2.get(i));
+            cardsInHandP2.add(new Card(other.cardsInHandP2.get(i)));
         }
+
+        cardsInHandP3 = new ArrayList<>();
         for(int i = 0; i < other.cardsInHandP3.size(); i++) {
-            cardsInHandP3.set(i, other.cardsInHandP3.get(i));
+            cardsInHandP3.add(new Card(other.cardsInHandP3.get(i)));
         }
+
+        cardsInHandP4 = new ArrayList<>();
         for(int i = 0; i < other.cardsInHandP4.size(); i++) {
-            cardsInHandP4.set(i, other.cardsInHandP4.get(i));
+            cardsInHandP4.add(new Card(other.cardsInHandP4.get(i)));
         }
 
+        deckOfCards = new ArrayList<>();
         for(int i = 0; i < other.deckOfCards.size(); i++) {
-            deckOfCards.set(i, other.deckOfCards.get(i));
+            deckOfCards.add(new Card(other.deckOfCards.get(i)));
+            //deckOfCards.set(i, other.deckOfCards.get(i));
         }
 
+        discardPile = new ArrayList<>();
         for(int i = 0; i < other.discardPile.size(); i++) {
-            discardPile.set(i, other.discardPile.get(i));
+            discardPile.add(new Card(other.discardPile.get(i)));
+            //discardPile.set(i, other.discardPile.get(i));
         }
+
+        drawPile = new ArrayList<>();
         for(int i = 0; i < other.drawPile.size(); i++) {
-            drawPile.set(i, other.drawPile.get(i));
+            drawPile.add(new Card(other.drawPile.get(i)));
+            //drawPile.set(i, other.drawPile.get(i));
         }
     }
 
