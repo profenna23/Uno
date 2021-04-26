@@ -8,14 +8,14 @@ import com.example.uno.game.GameFramework.players.GamePlayer;
 
 public class unoPlayCard extends GameAction {
     private GamePlayer playerID;
-    private Card cardPlayed;
+    private int cardPlayed;
 
     /**
      * constructor for GameAction
      *
      * @param playerID the player who created the action
      */
-    public unoPlayCard(GamePlayer playerID, Card cardPlayed) {
+    public unoPlayCard(GamePlayer playerID, int cardPlayed) {
         super(playerID);
         //2 getters
         //player - who's playing,
@@ -27,7 +27,7 @@ public class unoPlayCard extends GameAction {
     public GamePlayer playerID(){
         return playerID;
     }
-    public Card cardPlayed(){
+    public int cardPlayed(){
         return cardPlayed;
     }
 

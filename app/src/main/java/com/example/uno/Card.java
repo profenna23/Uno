@@ -4,17 +4,20 @@ public class Card {
     private int numOnCard;
     private int colorOnCard; // 1 is Red, 2 is Green, 3 is Blue, 4 is Yellow
     private String typeOfCard;
+    private int resId;
 
     public Card(int num, int color, String type) {
         numOnCard = num; // num is -1 for skip, -2 for reverse, -3  for draw2, -4 for wild, -5 for wild+4
         colorOnCard = color;
         typeOfCard = typeOfCard;
+        resId = -1;
     }
 
     public Card(Card other){
         this.numOnCard = other.numOnCard;
         this.colorOnCard = other.colorOnCard;
         this.typeOfCard = other.typeOfCard;
+        this.resId = other.resId;
     }
 
     public int getNum() {
@@ -28,7 +31,13 @@ public class Card {
     public String getType() {
         return typeOfCard;
     }
+    public int getResId() {
+        return resId;
+    }
 
+    public void setResId(int resId) {
+        this.resId = resId;
+    }
 
     @Override
     public String toString() {

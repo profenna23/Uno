@@ -154,50 +154,61 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <Button
-                android:id="@+id/card1"
+            <ImageButton
+                android:id="@+id/p1card1"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
-            <Button
-                android:id="@+id/card2"
+
+            <ImageButton
+                android:id="@+id/p1card2"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
-            <Button
-                android:id="@+id/card3"
+
+            <ImageButton
+                android:id="@+id/p1card3"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
-            <Button
-                android:id="@+id/card4"
+            <ImageButton
+                android:id="@+id/p1card4"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
-            <Button
-                android:id="@+id/card5"
+
+            <ImageButton
+                android:id="@+id/p1card5"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
-            <Button
-                android:id="@+id/card6"
+
+            <ImageButton
+                android:id="@+id/p1card6"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
-            <Button
-                android:id="@+id/card7"
+            <ImageButton
+                android:id="@+id/p1card7"
+
                 android:layout_width="154dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"

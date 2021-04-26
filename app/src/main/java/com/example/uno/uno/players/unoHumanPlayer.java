@@ -3,6 +3,7 @@ package com.example.uno.uno.players;
 import android.graphics.Canvas;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.uno.R;
@@ -95,6 +96,13 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         if (info instanceof GameState) {
             // then look at gamestate to figure out what screen should display
             // anything to be drawn - in this method
+            UnoState theState = (UnoState)info;
+
+                if (theState.getCardsInHandP1().size() >= 1){
+                    ImageButton cardButton = myActivity.findViewById(R.id.p1card1);
+                    cardButton.setImageResource(theState.getCardsInHandP1().get(0).getResId());
+                }
+
         }
 
     }
@@ -155,13 +163,15 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
 
         //setting the hand's on click listeners
-        Button firstCard = (Button) activity.findViewById(R.id.card1);
-        Button secondCard = (Button) activity.findViewById(R.id.card2);
-        Button thirdCard = (Button) activity.findViewById(R.id.card3);
-        Button fourthCard = (Button) activity.findViewById(R.id.card4);
-        Button fifthCard = (Button) activity.findViewById(R.id.card5);
-        Button sixthCard = (Button) activity.findViewById(R.id.card6);
-        Button seventhCard = (Button) activity.findViewById(R.id.card7);
+
+        Button firstCard = (Button)activity.findViewById(R.id.p1card1);
+        Button secondCard = (Button)activity.findViewById(R.id.p1card2);
+        Button thirdCard = (Button)activity.findViewById(R.id.p1card3);
+        Button fourthCard = (Button)activity.findViewById(R.id.p1card4);
+        Button fifthCard = (Button)activity.findViewById(R.id.p1card5);
+        Button sixthCard = (Button)activity.findViewById(R.id.p1card6);
+        Button seventhCard = (Button)activity.findViewById(R.id.p1card7);
+
         firstCard.setOnClickListener(this);
         secondCard.setOnClickListener(this);
         thirdCard.setOnClickListener(this);
@@ -195,8 +205,13 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             game.sendAction(new unoHelp(this));
         }
 
+        if(v.getId() == R.id.p1card1){
+            game.sendAction(new unoPlayCard(this, 0));
+        }
 
-        //game.sendAction(new unoPlayCard(this, cardToPlay));
+
+        //same for all cards
+
 
 
         /**
@@ -211,6 +226,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
          *      Youtube VID: https://www.youtube.com/watch?v=Jn1e7Vkd2tk
          */
 
+
+        //game.sendAction(new unoPlayCard(this, cardToPlay));
 
 
     }
