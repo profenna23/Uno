@@ -103,6 +103,9 @@ public class UnoLocalGame extends LocalGame {
         if(action instanceof unoDrawCard) {
             unoDrawCard playCard = (unoDrawCard) action;
             UnoState state = (UnoState) super.state;
+            if(state.getDrawPile().size() == 0) {
+                state.reshuffle();
+            }
             int playerID = getPlayerIdx(playCard.getPlayer());
 
             if(playerID == 0 ) {
