@@ -76,21 +76,43 @@ public class UnoState extends GameState {
             }
         }
 
+        // 1:0, 2: 1-9, 2: each action card
+
+        for (int i = 0; i < 1; i++) {
+            // yellow 0
+            //deckOfCards.get(i).setResId(R.drawable.yellow_0);
+        }
+
+        // yellow int 0-24
+        // set the yellow 0-9
+        // yellow skip, reverse, draw2
+
+        // blue int 25-49 - megan
+
+        // red int 50-74 - john
+
+        // green int 75-99 - saylene
+
+
         // Sets the wild cards
         for (int i = 100; i < 104; i++) {
-            Card temp = new Card(-4, -1, "wild");
-            deckOfCards.add(temp);
+            //Card temp = new Card(-4, -1, "wild");
+            //deckOfCards.add(temp);
+            deckOfCards.get(i).setResId(R.drawable.wild);
         }
 
         // Sets the wildDraw4 cards
         for (int i = 104; i < 108; i++) {
-            Card temp = new Card(-5, -1, "wildDraw4");
-            deckOfCards.add(temp);
+            //Card temp = new Card(-5, -1, "wildDraw4");
+            //deckOfCards.add(temp);
             // set resource for card
+            deckOfCards.get(i).setResId(R.drawable.wild_draw4);
         }
 
         // set all cards & images ^^^^
         // no capitals/spaces in file names
+
+
 
         // Shuffle
         Random rand = new Random();
