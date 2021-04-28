@@ -239,7 +239,11 @@ public class UnoState extends GameState {
             deckOfCards.get(i).setResId(R.drawable.blue_skip);
         }
         //blue reverse
+
         for (int i = 46; i < 48; i++) {
+
+      
+
             Card blue_reverse = new Card(-2, 3, "reverse");
             deckOfCards.add(blue_reverse);
             deckOfCards.get(i).setResId(R.drawable.blue_reverse);
@@ -253,9 +257,176 @@ public class UnoState extends GameState {
 
 
         // red int 50-74 - john
+        for (int i = 50; i < 51; i++) {
+            // 1 red 0
+            Card red_0 = new Card(0, 1, "normal");
+            deckOfCards.add(red_0);
+            deckOfCards.get(i).setResId(R.drawable.red_0);
+        }
+
+        for (int i = 51; i < 53; i++) {
+            // 2 red 1's
+            Card red_1 = new Card(1, 1, "normal");
+            deckOfCards.add(red_1);
+            deckOfCards.get(i).setResId(R.drawable.red_1);
+        }
+
+        for (int i = 53; i < 55; i++) {
+            // 2 red 2's
+            Card red_2 = new Card(2, 1, "normal");
+            deckOfCards.add(red_2);
+            deckOfCards.get(i).setResId(R.drawable.red_2);
+        }
+
+        for (int i = 55; i < 57; i++) {
+            // 2 red 3's
+            Card red_3 = new Card(3, 1, "normal");
+            deckOfCards.add(red_3);
+            deckOfCards.get(i).setResId(R.drawable.red_3);
+        }
+
+        for (int i = 57; i < 59; i++) {
+            // 2 red 4's
+            Card red_4 = new Card(4, 1, "normal");
+            deckOfCards.add(red_4);
+            deckOfCards.get(i).setResId(R.drawable.red_4);
+        }
+
+        for (int i = 59; i < 61; i++) {
+            // 2 red 5's
+            Card red_5 = new Card(5, 1, "normal");
+            deckOfCards.add(red_5);
+            deckOfCards.get(i).setResId(R.drawable.red_5);
+        }
+
+        for (int i = 61; i < 63; i++) {
+            // 2 red 6's
+            Card red_6 = new Card(6, 1, "normal");
+            deckOfCards.add(red_6);
+            deckOfCards.get(i).setResId(R.drawable.yellow_6);
+        }
+
+        for (int i = 63; i < 65; i++) {
+            // 2 red 7's
+            Card red_7 = new Card(7, 1, "normal");
+            deckOfCards.add(red_7);
+            deckOfCards.get(i).setResId(R.drawable.red_7);
+        }
+
+        for (int i = 65; i < 67; i++) {
+            // 2 red 8's
+            Card red_8 = new Card(8, 1, "normal");
+            deckOfCards.add(red_8);
+            deckOfCards.get(i).setResId(R.drawable.red_8);
+        }
+
+        for (int i = 67; i < 69; i++) {
+            // 2 red 9's
+            Card red_9 = new Card(9, 1, "normal");
+            deckOfCards.add(red_9);
+            deckOfCards.get(i).setResId(R.drawable.red_9);
+        }
+
+        for (int i = 69; i < 71; i++) {
+            // 2 red skips
+            Card red_skip = new Card(-1, 1, "skip");
+            deckOfCards.add(red_skip);
+            deckOfCards.get(i).setResId(R.drawable.red_skip);
+        }
+
+        for (int i = 71; i < 73; i++) {
+            // 2 red reserves
+            Card red_reverse = new Card(-2, 1, "reverse");
+            deckOfCards.add(red_reverse);
+            deckOfCards.get(i).setResId(R.drawable.red_reverse);
+        }
+
+        for (int i = 73; i < 75; i++) {
+            // 2 red draw2's
+            Card red_draw2 = new Card(-3, 1, "draw2");
+            deckOfCards.add(red_draw2);
+            deckOfCards.get(i).setResId(R.drawable.red_draw2);
+        }
 
         // green int 75-99 - saylene
-
+        for (int i = 75; i < 77; i++) {
+            // 2 green 0's
+            Card green_0 = new Card(0, 2, "normal");
+            deckOfCards.add(green_0);
+            deckOfCards.get(i).setResId(R.drawable.green_0);
+        }
+        for (int i = 77; i < 79; i++) {
+            // 2 green 1's
+            Card green_1 = new Card(1, 2, "normal");
+            deckOfCards.add(green_1);
+            deckOfCards.get(i).setResId(R.drawable.green_1);
+        }
+        for (int i = 79; i < 81; i++) {
+            // 2 green 2's
+            Card green_2 = new Card(2, 2, "normal");
+            deckOfCards.add(green_2);
+            deckOfCards.get(i).setResId(R.drawable.green_2);
+        }
+        for (int i = 81; i < 83; i++) {
+            // 2 green 3's
+            Card green_3 = new Card(3, 2, "normal");
+            deckOfCards.add(green_3);
+            deckOfCards.get(i).setResId(R.drawable.green_3);
+        }
+        for (int i = 83; i < 85; i++) {
+            // 2 green 4's
+            Card green_4 = new Card(4, 2, "normal");
+            deckOfCards.add(green_4);
+            deckOfCards.get(i).setResId(R.drawable.green_4);
+        }
+        for (int i = 85; i < 87; i++) {
+            // 2 green 5's
+            Card green_5 = new Card(5, 2, "normal");
+            deckOfCards.add(green_5);
+            deckOfCards.get(i).setResId(R.drawable.green_5);
+        }
+        for (int i = 87; i < 89; i++) {
+            // 2 green 6's
+            Card green_6 = new Card(6, 2, "normal");
+            deckOfCards.add(green_6);
+            deckOfCards.get(i).setResId(R.drawable.green_6);
+        }
+        for (int i = 89; i < 91; i++) {
+            // 2 green 7's
+            Card green_7 = new Card(7, 2, "normal");
+            deckOfCards.add(green_7);
+            deckOfCards.get(i).setResId(R.drawable.green_7);
+        }
+        for (int i = 91; i < 93; i++) {
+            // 2 green 8's
+            Card green_8 = new Card(8, 2, "normal");
+            deckOfCards.add(green_8);
+            deckOfCards.get(i).setResId(R.drawable.green_8);
+        }
+        for (int i = 93; i < 95; i++) {
+            // 2 green 9's
+            Card green_9 = new Card(9, 2, "normal");
+            deckOfCards.add(green_9);
+            deckOfCards.get(i).setResId(R.drawable.green_9);
+        }
+        for (int i = 96; i < 98; i++) {
+            // 2 green skips
+            Card green_skip = new Card(-1, 2, "skip");
+            deckOfCards.add(green_skip);
+            deckOfCards.get(i).setResId(R.drawable.green_skip);
+        }
+        for (int i = 98; i < 100; i++) {
+            // 2 green reverse
+            Card green_reverse = new Card(-2, 2, "reverse");
+            deckOfCards.add(green_reverse);
+            deckOfCards.get(i).setResId(R.drawable.green_reverse);
+        }
+        for (int i = 100; i < 102; i++) {
+            // 2 green draw2
+            Card green_draw2 = new Card(-3, 2, "draw2");
+            deckOfCards.add(green_draw2);
+            deckOfCards.get(i).setResId(R.drawable.green_draw2);
+        }
 
         // Sets the wild cards
         for (int i = 100; i < 104; i++) {
@@ -323,11 +494,7 @@ public class UnoState extends GameState {
 
         playerTurn = 0;
 
-        // to do: remove this code
-        // sets every image to green reverse
-        for(int i=0; i<deckOfCards.size(); i++){
-            deckOfCards.get(i).setResId(R.drawable.green_reverse);
-        }
+
 
     }
 
