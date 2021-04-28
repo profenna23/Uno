@@ -99,14 +99,44 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             // anything to be drawn - in this method
             UnoState theState = (UnoState)info;
 
-                // this draws the 1st card in players hand
-                if (theState.getCardsInHandP1().size() >= 1){
-                    ImageButton cardButton = myActivity.findViewById(R.id.p1card1);
-                    cardButton.setImageResource(theState.getCardsInHandP1().get(0).getResId());
-                }
-                // to do: same as above - show all cards plus discardPile
+            // discard pile
+            ImageButton cardButton = myActivity.findViewById(R.id.setPile);
+            int discard = theState.getDiscardPile().size() -1;
+            cardButton.setImageResource(theState.getDiscardPile().get(discard).getResId());
+
+            // this draws the 1st card in players hand
+            if (theState.getCardsInHandP1().size() >= 1){
+                cardButton = myActivity.findViewById(R.id.p1card1);
+                cardButton.setImageResource(theState.getCardsInHandP1().get(0).getResId());
+            }
+            // to do: same as above - show all cards plus discardPile
+            if (theState.getCardsInHandP1().size() >= 2){
+                cardButton = myActivity.findViewById(R.id.p1card2);
+                cardButton.setImageResource(theState.getCardsInHandP1().get(1).getResId());
+            }
+            if (theState.getCardsInHandP1().size() >= 3){
+                cardButton = myActivity.findViewById(R.id.p1card3);
+                cardButton.setImageResource(theState.getCardsInHandP1().get(2).getResId());
+            }
+            if (theState.getCardsInHandP1().size() >= 4){
+                cardButton = myActivity.findViewById(R.id.p1card4);
+                cardButton.setImageResource(theState.getCardsInHandP1().get(3).getResId());
+            }
+            if (theState.getCardsInHandP1().size() >= 5){
+                cardButton = myActivity.findViewById(R.id.p1card5);
+                cardButton.setImageResource(theState.getCardsInHandP1().get(4).getResId());
+            }
+            if (theState.getCardsInHandP1().size() >= 6){
+                cardButton = myActivity.findViewById(R.id.p1card6);
+                cardButton.setImageResource(theState.getCardsInHandP1().get(5).getResId());
+            }
+            if (theState.getCardsInHandP1().size() >= 7){
+                cardButton = myActivity.findViewById(R.id.p1card7);
+                cardButton.setImageResource(theState.getCardsInHandP1().get(6).getResId());
+            }
 
         }
+
 
     }
 
@@ -213,12 +243,28 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         if(v.getId() == R.id.p1card1){
             Log.e("onClick", "sending human card 0");
             game.sendAction(new unoPlayCard(this, 0));
+        } else if(v.getId() == R.id.p1card2){
+            Log.e("onClick", "sending human card 1");
+            game.sendAction(new unoPlayCard(this, 1));
+        } else if(v.getId() == R.id.p1card3){
+            Log.e("onClick", "sending human card 2");
+            game.sendAction(new unoPlayCard(this, 2));
+        } else if(v.getId() == R.id.p1card4){
+            Log.e("onClick", "sending human card 3");
+            game.sendAction(new unoPlayCard(this, 3));
+        } else if(v.getId() == R.id.p1card5){
+            Log.e("onClick", "sending human card 4");
+            game.sendAction(new unoPlayCard(this, 4));
+        } else if(v.getId() == R.id.p1card6){
+            Log.e("onClick", "sending human card 5");
+            game.sendAction(new unoPlayCard(this, 5));
+        } else if(v.getId() == R.id.p1card7){
+            Log.e("onClick", "sending human card 6");
+            game.sendAction(new unoPlayCard(this, 6));
+        } else {
+            Log.e("onClick", "did nothing w click");
         }
-        Log.e("onClick", "did nothign w click");
-
-
-        //same for all cards
-
+        
 
 
         /**

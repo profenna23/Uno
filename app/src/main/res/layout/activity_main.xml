@@ -118,7 +118,7 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/setPile"
                 android:layout_width="146dp"
                 android:layout_height="229dp"

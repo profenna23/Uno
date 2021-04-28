@@ -409,19 +409,19 @@ public class UnoState extends GameState {
             deckOfCards.add(green_9);
             deckOfCards.get(i).setResId(R.drawable.green_9);
         }
-        for (int i = 96; i < 98; i++) {
+        for (int i = 95; i < 97; i++) {
             // 2 green skips
             Card green_skip = new Card(-1, 2, "skip");
             deckOfCards.add(green_skip);
             deckOfCards.get(i).setResId(R.drawable.green_skip);
         }
-        for (int i = 98; i < 100; i++) {
+        for (int i = 97; i < 99; i++) {
             // 2 green reverse
             Card green_reverse = new Card(-2, 2, "reverse");
             deckOfCards.add(green_reverse);
             deckOfCards.get(i).setResId(R.drawable.green_reverse);
         }
-        for (int i = 100; i < 102; i++) {
+        for (int i = 99; i < 101; i++) {
             // 2 green draw2
             Card green_draw2 = new Card(-3, 2, "draw2");
             deckOfCards.add(green_draw2);
@@ -429,14 +429,14 @@ public class UnoState extends GameState {
         }
 
         // Sets the wild cards
-        for (int i = 100; i < 104; i++) {
+        for (int i = 101; i < 105; i++) {
             Card wild = new Card(-4, -1, "wild");
             deckOfCards.add(wild);
             deckOfCards.get(i).setResId(R.drawable.wild);
         }
 
         // Sets the wildDraw4 cards
-        for (int i = 104; i < 108; i++) {
+        for (int i = 105; i < 109; i++) {
             Card wildDraw4 = new Card(-5, -1, "wildDraw4");
             deckOfCards.add(wildDraw4);
             deckOfCards.get(i).setResId(R.drawable.wild_draw4);
