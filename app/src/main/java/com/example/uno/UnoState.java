@@ -79,13 +79,71 @@ public class UnoState extends GameState {
         // 1:0, 2: 1-9, 2: each action card
 
         for (int i = 0; i < 1; i++) {
-            // yellow 0
-            //deckOfCards.get(i).setResId(R.drawable.yellow_0);
+            // 1 yellow 0
+            Card yellow_0 = new Card(0, 4, "normal");
+            deckOfCards.add(yellow_0);
+            deckOfCards.get(i).setResId(R.drawable.yellow_0);
         }
 
-        // yellow int 0-24
-        // set the yellow 0-9
-        // yellow skip, reverse, draw2
+        for (int i = 1; i < 3; i++) {
+            // 2 yellow 1's
+            deckOfCards.get(i).setResId(R.drawable.yellow_1);
+        }
+
+        for (int i = 3; i < 5; i++) {
+            // 2 yellow 2's
+            deckOfCards.get(i).setResId(R.drawable.yellow_2);
+        }
+
+        for (int i = 5; i < 7; i++) {
+            // 2 yellow 3's
+            deckOfCards.get(i).setResId(R.drawable.yellow_3);
+        }
+
+        for (int i = 7; i < 9; i++) {
+            // 2 yellow 4's
+            deckOfCards.get(i).setResId(R.drawable.yellow_4);
+        }
+
+        for (int i = 9; i < 11; i++) {
+            // 2 yellow 5's
+            deckOfCards.get(i).setResId(R.drawable.yellow_5);
+        }
+
+        for (int i = 11; i < 13; i++) {
+            // 2 yellow 6's
+            deckOfCards.get(i).setResId(R.drawable.yellow_6);
+        }
+
+        for (int i = 13; i < 15; i++) {
+            // 2 yellow 7's
+            deckOfCards.get(i).setResId(R.drawable.yellow_7);
+        }
+
+        for (int i = 15; i < 17; i++) {
+            // 2 yellow 8's
+            deckOfCards.get(i).setResId(R.drawable.yellow_8);
+        }
+
+        for (int i = 17; i < 19; i++) {
+            // 2 yellow 9's
+            deckOfCards.get(i).setResId(R.drawable.yellow_9);
+        }
+
+        for (int i = 19; i < 21; i++) {
+            // 2 yellow skips
+            deckOfCards.get(i).setResId(R.drawable.yellow_skip);
+        }
+
+        for (int i = 21; i < 23; i++) {
+            // 2 yellow reserves
+            deckOfCards.get(i).setResId(R.drawable.yellow_reverse);
+        }
+
+        for (int i = 23; i < 25; i++) {
+            // 2 yellow draw2's
+            deckOfCards.get(i).setResId(R.drawable.yellow_draw2);
+        }
 
         // blue int 25-49 - megan
 
