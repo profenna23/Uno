@@ -62,9 +62,8 @@ public class UnoLocalGame extends LocalGame {
 
     @Override
     protected boolean makeMove(GameAction action) {
-        int thisISATest = 2;
-        thisISATest = 3;
-        if(action instanceof unoPlayCard && thisISATest == 3) {
+
+        if(action instanceof unoPlayCard) {
            unoPlayCard playCard = (unoPlayCard) action;
            UnoState state = (UnoState) super.state;
            int cardPlayed = playCard.cardPlayed();
