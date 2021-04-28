@@ -238,7 +238,7 @@ public class UnoState extends GameState {
             deckOfCards.add(blue_skip);
             deckOfCards.get(i).setResId(R.drawable.blue_skip);
         }
-        //blue reversee
+        //blue reverse
         for (int i = 19; i < 21; i++) {
             Card blue_reverse = new Card(-2, 3, "reverse");
             deckOfCards.add(blue_reverse);
@@ -407,11 +407,7 @@ public class UnoState extends GameState {
 
         playerTurn = 0;
 
-        // to do: remove this code
-        // sets every image to green reverse
-        for(int i=0; i<deckOfCards.size(); i++){
-            deckOfCards.get(i).setResId(R.drawable.green_reverse);
-        }
+
 
     }
 
