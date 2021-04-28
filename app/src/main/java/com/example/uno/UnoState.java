@@ -542,6 +542,24 @@ public class UnoState extends GameState {
         }
     }
 
+    public void reshuffle() {
+        for(int i = 1; i < discardPile.size(); i++) {
+            drawPile.add(discardPile.get(i));
+
+
+        }
+        discardPile.trimToSize();
+        Random rand = new Random();
+        for (int i = 0; i < drawPile.size(); i++) {
+            int randomIdx = rand.nextInt(drawPile.size());
+            Card temp = drawPile.get(randomIdx);
+            drawPile.set(randomIdx, drawPile.get(i));
+            drawPile.set(i, temp);
+
+        }
+
+    }
+
     public int getPlayerTurn() {
         return playerTurn;
     }
