@@ -35,9 +35,10 @@ public class UnoState extends GameState {
 
         deckOfCards = new ArrayList<Card>(108);
         discardPile = new ArrayList<>();
+
         // Set each card in deck
         // Loop for each normal color card from 1-9
-        for (int i = 0; i < 72; i++) {
+        /*for (int i = 0; i < 72; i++) {
             for (int j = 1; j <= 4; j++) {
                 for (int k = 1; k <= 9; k++) {
                     Card temp = new Card(k, j, "normal");
@@ -74,10 +75,14 @@ public class UnoState extends GameState {
                 Card temp = new Card(-3, j, "draw2");
                 deckOfCards.add(temp);
             }
-        }
+        }*/
+
+        // adding every card
 
         // 1:0, 2: 1-9, 2: each action card
 
+        
+        // yellow cards:
         for (int i = 0; i < 1; i++) {
             // 1 yellow 0
             Card yellow_0 = new Card(0, 4, "normal");
@@ -87,61 +92,85 @@ public class UnoState extends GameState {
 
         for (int i = 1; i < 3; i++) {
             // 2 yellow 1's
+            Card yellow_1 = new Card(1, 4, "normal");
+            deckOfCards.add(yellow_1);
             deckOfCards.get(i).setResId(R.drawable.yellow_1);
         }
 
         for (int i = 3; i < 5; i++) {
             // 2 yellow 2's
+            Card yellow_2 = new Card(2, 4, "normal");
+            deckOfCards.add(yellow_2);
             deckOfCards.get(i).setResId(R.drawable.yellow_2);
         }
 
         for (int i = 5; i < 7; i++) {
             // 2 yellow 3's
+            Card yellow_3 = new Card(3, 4, "normal");
+            deckOfCards.add(yellow_3);
             deckOfCards.get(i).setResId(R.drawable.yellow_3);
         }
 
         for (int i = 7; i < 9; i++) {
             // 2 yellow 4's
+            Card yellow_4 = new Card(4, 4, "normal");
+            deckOfCards.add(yellow_4);
             deckOfCards.get(i).setResId(R.drawable.yellow_4);
         }
 
         for (int i = 9; i < 11; i++) {
             // 2 yellow 5's
+            Card yellow_5 = new Card(5, 4, "normal");
+            deckOfCards.add(yellow_5);
             deckOfCards.get(i).setResId(R.drawable.yellow_5);
         }
 
         for (int i = 11; i < 13; i++) {
             // 2 yellow 6's
+            Card yellow_6 = new Card(6, 4, "normal");
+            deckOfCards.add(yellow_6);
             deckOfCards.get(i).setResId(R.drawable.yellow_6);
         }
 
         for (int i = 13; i < 15; i++) {
             // 2 yellow 7's
+            Card yellow_7 = new Card(7, 4, "normal");
+            deckOfCards.add(yellow_7);
             deckOfCards.get(i).setResId(R.drawable.yellow_7);
         }
 
         for (int i = 15; i < 17; i++) {
             // 2 yellow 8's
+            Card yellow_8 = new Card(8, 4, "normal");
+            deckOfCards.add(yellow_8);
             deckOfCards.get(i).setResId(R.drawable.yellow_8);
         }
 
         for (int i = 17; i < 19; i++) {
             // 2 yellow 9's
+            Card yellow_9 = new Card(9, 4, "normal");
+            deckOfCards.add(yellow_9);
             deckOfCards.get(i).setResId(R.drawable.yellow_9);
         }
 
         for (int i = 19; i < 21; i++) {
             // 2 yellow skips
+            Card yellow_skip = new Card(-1, 4, "skip");
+            deckOfCards.add(yellow_skip);
             deckOfCards.get(i).setResId(R.drawable.yellow_skip);
         }
 
         for (int i = 21; i < 23; i++) {
             // 2 yellow reserves
+            Card yellow_reverse = new Card(-2, 4, "reverse");
+            deckOfCards.add(yellow_reverse);
             deckOfCards.get(i).setResId(R.drawable.yellow_reverse);
         }
 
         for (int i = 23; i < 25; i++) {
             // 2 yellow draw2's
+            Card yellow_draw2 = new Card(-3, 4, "draw2");
+            deckOfCards.add(yellow_draw2);
             deckOfCards.get(i).setResId(R.drawable.yellow_draw2);
         }
 
@@ -154,16 +183,15 @@ public class UnoState extends GameState {
 
         // Sets the wild cards
         for (int i = 100; i < 104; i++) {
-            //Card temp = new Card(-4, -1, "wild");
-            //deckOfCards.add(temp);
+            Card wild = new Card(-4, -1, "wild");
+            deckOfCards.add(wild);
             deckOfCards.get(i).setResId(R.drawable.wild);
         }
 
         // Sets the wildDraw4 cards
         for (int i = 104; i < 108; i++) {
-            //Card temp = new Card(-5, -1, "wildDraw4");
-            //deckOfCards.add(temp);
-            // set resource for card
+            Card wildDraw4 = new Card(-5, -1, "wildDraw4");
+            deckOfCards.add(wildDraw4);
             deckOfCards.get(i).setResId(R.drawable.wild_draw4);
         }
 
