@@ -62,6 +62,7 @@ public class UnoLocalGame extends LocalGame {
 
     @Override
     protected boolean makeMove(GameAction action) {
+        int playerCount = this.getPlayers().length;
         int thisISATest = 2;
         thisISATest = 3;
         if(action instanceof unoPlayCard && thisISATest == 3) {
@@ -82,14 +83,24 @@ public class UnoLocalGame extends LocalGame {
                 (state.getDiscardPile()).add(state.getCardsInHandP2().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                 state.getCardsInHandP2().remove(cardPlayed);
                 state.getCardsInHandP2().trimToSize();
-                state.setPlayerTurn(2);
+                if(playerCount == 2) {
+                    state.setPlayerTurn(1);
+                }
+                else {
+                    state.setPlayerTurn(2);
+                }
                 return true;
             }
             if(playerID == 2) {
                 (state.getDiscardPile()).add(state.getCardsInHandP3().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                 state.getCardsInHandP3().remove(cardPlayed);
                 state.getCardsInHandP3().trimToSize();
-                state.setPlayerTurn(3);
+                if(playerCount == 3) {
+                    state.setPlayerTurn(1);
+                }
+                else {
+                    state.setPlayerTurn(3);
+                }
                 return true;
             }
             if(playerID == 3) {
@@ -112,24 +123,38 @@ public class UnoLocalGame extends LocalGame {
                 state.getCardsInHandP1().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
+                state.setPlayerTurn(1);
                 return true;
             }
             if(playerID == 1) {
                 state.getCardsInHandP2().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
+                if(playerCount == 2) {
+                    state.setPlayerTurn(1);
+                }
+                else {
+                    state.setPlayerTurn(2);
+                }
                 return true;
             }
             if(playerID == 2) {
                 state.getCardsInHandP3().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
+                if(playerCount == 3) {
+                    state.setPlayerTurn(1);
+                }
+                else {
+                    state.setPlayerTurn(3);
+                }
                 return true;
             }
             if(playerID == 3) {
                 state.getCardsInHandP4().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
+                state.setPlayerTurn(0);
                 return true;
             }
 
@@ -145,6 +170,7 @@ public class UnoLocalGame extends LocalGame {
     @Override
     protected boolean exitGame(GameAction action) {
         if (action instanceof unoExit) {
+            return true;
             //if action is unoExit
             //then use constructor to get player
 
