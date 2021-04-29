@@ -42,22 +42,39 @@ public class UnoLocalGame extends LocalGame {
 
         UnoState state = (UnoState) super.state;
 
-        if(state.getCardsInHandP1().size() == 0 && state.getCardsInHandP1().get(0) != null ) {
+        if(state.getCardsInHandP1().size() == 0) { //&& state.getCardsInHandP1().get(0) != null
             return "Player 1 has won!";
         }
-        if(state.getCardsInHandP2().size() == 0 && state.getCardsInHandP2().get(0) != null) {
+        if(state.getCardsInHandP2().size() == 0) {
             return "Player 2 has won!";
         }
-        if(state.getCardsInHandP3().size() == 0 && state.getCardsInHandP3().get(0) != null) {
-            return "Player 2 has won!";
+        if(state.getCardsInHandP3().size() == 0) {
+            return "Player 3 has won!";
         }
-        if(state.getCardsInHandP4().size() == 0 && state.getCardsInHandP4().get(0) != null) {
-            return "Player 2 has won!";
+        if(state.getCardsInHandP4().size() == 0) {
+            return "Player 4 has won!";
         }
         return null;
 
 
 
+    }
+
+    public boolean isValid(Card desiredPlay, Card lastPlayed){
+
+        if (desiredPlay.getNum() == lastPlayed.getNum()){
+            // number matches; valid move
+            return true;
+        } else if (desiredPlay.getColor() == lastPlayed.getColor()){
+            // color matches; valid move
+            return true;
+        } else if (desiredPlay.getNum() == -4 || desiredPlay.getNum() == -5){
+            // wild card; valid move
+            return true;
+        } else {
+            // card is not valid
+            return false;
+        }
     }
 
     @Override
@@ -73,20 +90,41 @@ public class UnoLocalGame extends LocalGame {
            GamePlayer[] players = getPlayers();
            int playersNum = players.length;
 
+           // get the last card played
+           int lastCardPlayed = state.getDiscardPile().size() -1;
+           Card lastPlayed = state.getDiscardPile().get(lastCardPlayed);
+
+           // get the card the player wants to play
+           Card playersCard = null;
            if(playerID == 0) {
-               (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
-               state.getCardsInHandP1().remove(cardPlayed);
-               state.getCardsInHandP1().trimToSize();
+               playersCard = state.getCardsInHandP1().get(cardPlayed);
+           } else if (playerID == 1){
+               playersCard = state.getCardsInHandP2().get(cardPlayed);
+           } else if (playerID == 2){
+               playersCard = state.getCardsInHandP3().get(cardPlayed);
+           } else {
+               playersCard = state.getCardsInHandP4().get(cardPlayed);
+           }
+
+           if(playerID == 0) {
+
+               if (isValid(playersCard, lastPlayed) == true){
+                   (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                   state.getCardsInHandP1().remove(cardPlayed);
+                   state.getCardsInHandP1().trimToSize();
+               }
 
                // if 2,3, or 4 players:
                state.setPlayerTurn(1);
-
                return true;
            }
             if(playerID == 1) {
-                (state.getDiscardPile()).add(state.getCardsInHandP2().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
-                state.getCardsInHandP2().remove(cardPlayed);
-                state.getCardsInHandP2().trimToSize();
+
+                if (isValid(playersCard, lastPlayed) == true){
+                    (state.getDiscardPile()).add(state.getCardsInHandP2().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                    state.getCardsInHandP2().remove(cardPlayed);
+                    state.getCardsInHandP2().trimToSize();
+                }
 
                 if (playersNum == 2){
                     // if only 2 players:
@@ -95,13 +133,15 @@ public class UnoLocalGame extends LocalGame {
                     // if 3 or 4 players:
                     state.setPlayerTurn(2);
                 }
-
                 return true;
             }
             if(playerID == 2) {
-                (state.getDiscardPile()).add(state.getCardsInHandP3().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
-                state.getCardsInHandP3().remove(cardPlayed);
-                state.getCardsInHandP3().trimToSize();
+
+                if (isValid(playersCard, lastPlayed) == true){
+                    (state.getDiscardPile()).add(state.getCardsInHandP3().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                    state.getCardsInHandP3().remove(cardPlayed);
+                    state.getCardsInHandP3().trimToSize();
+                }
 
                 if (playersNum == 3){
                     // if 3 players:
@@ -110,17 +150,18 @@ public class UnoLocalGame extends LocalGame {
                     // if 4 players:
                     state.setPlayerTurn(3);
                 }
-
                 return true;
             }
             if(playerID == 3) {
-                (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
-                state.getCardsInHandP4().remove(cardPlayed);
-                state.getCardsInHandP4().trimToSize();
+
+                if (isValid(playersCard, lastPlayed) == true){
+                    (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
+                    state.getCardsInHandP4().remove(cardPlayed);
+                    state.getCardsInHandP4().trimToSize();
+                }
 
                 // if 4 players:
                 state.setPlayerTurn(0);
-
                 return true;
             }
         }
