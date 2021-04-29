@@ -205,6 +205,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         ImageButton sixthCard = (ImageButton)activity.findViewById(R.id.p1card6);
         ImageButton seventhCard = (ImageButton)activity.findViewById(R.id.p1card7);
 
+        //ImageButton
+
         firstCard.setOnClickListener(this);
         secondCard.setOnClickListener(this);
         thirdCard.setOnClickListener(this);
