@@ -99,6 +99,7 @@ public class unoEasyCP extends GameComputerPlayer {
             // no playable cards - draw card & turn over
             // NEED DRAWCARD METHOD TO BE COMPLETE
             game.sendAction(new unoDrawCard(this));
+            return;
         }
 
         // random number chooses which card to play
@@ -109,6 +110,8 @@ public class unoEasyCP extends GameComputerPlayer {
         Card cardToPlay = playableCards.get(number);
 
         // sends action
+        // pause here
+        sleep(1);
         game.sendAction(new unoPlayCard(this, number));
 
     }
