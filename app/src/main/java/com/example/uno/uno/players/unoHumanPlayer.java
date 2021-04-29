@@ -264,7 +264,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         } else {
             Log.e("onClick", "did nothing w click");
         }
-        
+
 
 
         /**

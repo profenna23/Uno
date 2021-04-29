@@ -48,9 +48,11 @@ public class MainActivity extends GameMainActivity {
             }
         });
 
-        GameConfig defaultConfig = new GameConfig(playerTypes, 2,4, "Tic-Tac-Toe", 0);
+        GameConfig defaultConfig = new GameConfig(playerTypes, 2,4, "Uno", 0);
 
         defaultConfig.addPlayer("Human", 0); // yellow-on-blue GUI
+        defaultConfig.addPlayer("Computer", 1);
+        defaultConfig.addPlayer("Computer", 1);
         defaultConfig.addPlayer("Computer", 1);
 
         return defaultConfig;
