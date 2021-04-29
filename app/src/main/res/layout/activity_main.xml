@@ -12,8 +12,8 @@
         android:id="@+id/unoButton"
         android:layout_width="185dp"
         android:layout_height="95dp"
-        android:layout_marginTop="740dp"
-        android:layout_marginEnd="150dp"
+        android:layout_marginTop="744dp"
+        android:layout_marginEnd="52dp"
         android:backgroundTint="#FF0000"
         android:text="UNO"
         android:textColor="#000000"
@@ -22,8 +22,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="272dp"
-        android:layout_height="506dp"
+        android:layout_width="215dp"
+        android:layout_height="428dp"
         android:layout_marginTop="200dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +59,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="350dp"
+        android:layout_marginStart="250dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="350dp"
+        android:layout_marginEnd="250dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -149,24 +149,26 @@
         <LinearLayout
             android:id="@+id/player1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="298dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="horizontal"
             android:padding="10dp">
 
+
             <ImageButton
                 android:id="@+id/p1card1"
-
-                android:layout_width="154dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="231dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
-
             <ImageButton
                 android:id="@+id/p1card2"
-
-                android:layout_width="154dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="231dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
@@ -174,16 +176,18 @@
 
             <ImageButton
                 android:id="@+id/p1card3"
-
-                android:layout_width="154dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="231dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
             <ImageButton
                 android:id="@+id/p1card4"
-
-                android:layout_width="154dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="231dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
@@ -191,8 +195,9 @@
 
             <ImageButton
                 android:id="@+id/p1card5"
-
-                android:layout_width="154dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="231dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
@@ -200,16 +205,18 @@
 
             <ImageButton
                 android:id="@+id/p1card6"
-
-                android:layout_width="154dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="231dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
 
             <ImageButton
                 android:id="@+id/p1card7"
-
-                android:layout_width="154dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="231dp"
                 android:layout_height="229dp"
                 android:layout_weight="1"
                 android:text="." />
@@ -268,8 +275,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="250dp"
-        android:layout_height="500dp"
+        android:layout_width="202dp"
+        android:layout_height="410dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_weight="1"
@@ -298,7 +305,7 @@
             <Button
                 android:id="@+id/p3card2"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="17dp"
                 android:layout_weight="1"
                 android:backgroundTint="#2C2C2C"
                 android:text="UNO"
