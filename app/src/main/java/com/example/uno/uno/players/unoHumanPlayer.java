@@ -116,36 +116,45 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             if (theState.getCardsInHandP1().size() >= 2){
                 cardButton = myActivity.findViewById(R.id.p1card2);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(1).getResId());
+
                 cardButton.invalidate();
 
             }
             if (theState.getCardsInHandP1().size() >= 3){
                 cardButton = myActivity.findViewById(R.id.p1card3);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(2).getResId());
+
                 cardButton.invalidate();
                 ;
             }
             if (theState.getCardsInHandP1().size() >= 4){
                 cardButton = myActivity.findViewById(R.id.p1card4);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(3).getResId());
+
                 cardButton.invalidate();
 
             }
             if (theState.getCardsInHandP1().size() >= 5){
                 cardButton = myActivity.findViewById(R.id.p1card5);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(4).getResId());
+
                 cardButton.invalidate();
 
             }
             if (theState.getCardsInHandP1().size() >= 6){
+
                 cardButton = myActivity.findViewById(R.id.p1card6);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(5).getResId());
+
+
                 cardButton.invalidate();
 
             }
             if (theState.getCardsInHandP1().size() >= 7){
+
                 cardButton = myActivity.findViewById(R.id.p1card7);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(6).getResId());
+
                 cardButton.invalidate();
             }
 
