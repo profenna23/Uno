@@ -112,44 +112,79 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
                 cardButton.invalidate();
 
             }
+            else {
+                cardButton.setVisibility(View.INVISIBLE);
+            }
             // to do: same as above - show all cards plus discardPile
             if (theState.getCardsInHandP1().size() >= 2){
                 cardButton = myActivity.findViewById(R.id.p1card2);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(1).getResId());
+
                 cardButton.invalidate();
 
+            }
+            else {
+                cardButton.setVisibility(View.INVISIBLE);
             }
             if (theState.getCardsInHandP1().size() >= 3){
                 cardButton = myActivity.findViewById(R.id.p1card3);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(2).getResId());
+
                 cardButton.invalidate();
                 ;
+            }
+            else {
+                cardButton.setVisibility(View.INVISIBLE);
             }
             if (theState.getCardsInHandP1().size() >= 4){
                 cardButton = myActivity.findViewById(R.id.p1card4);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(3).getResId());
+
                 cardButton.invalidate();
 
+            }
+            else {
+                cardButton.setVisibility(View.INVISIBLE);
             }
             if (theState.getCardsInHandP1().size() >= 5){
                 cardButton = myActivity.findViewById(R.id.p1card5);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(4).getResId());
+
                 cardButton.invalidate();
 
+            }
+            else {
+                cardButton.setVisibility(View.INVISIBLE);
             }
             if (theState.getCardsInHandP1().size() >= 6){
+
                 cardButton = myActivity.findViewById(R.id.p1card6);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(5).getResId());
+
+
                 cardButton.invalidate();
 
+            }
+            else {
+                cardButton.setVisibility(View.INVISIBLE);
             }
             if (theState.getCardsInHandP1().size() >= 7){
+
                 cardButton = myActivity.findViewById(R.id.p1card7);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(6).getResId());
+                cardButton.setVisibility(View.VISIBLE);
+
                 cardButton.invalidate();
             }
+            else {
+                cardButton.setVisibility(View.INVISIBLE);
+            }
+
 
         }
+        // Create left and right buttons to offset
+
+        // Test with force pass
 
 
     }
