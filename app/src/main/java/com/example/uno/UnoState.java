@@ -239,11 +239,7 @@ public class UnoState extends GameState {
             deckOfCards.get(i).setResId(R.drawable.blue_skip);
         }
         //blue reverse
-
         for (int i = 46; i < 48; i++) {
-
-      
-
             Card blue_reverse = new Card(-2, 3, "reverse");
             deckOfCards.add(blue_reverse);
             deckOfCards.get(i).setResId(R.drawable.blue_reverse);
