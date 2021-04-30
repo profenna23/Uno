@@ -193,6 +193,14 @@ public class UnoLocalGame extends LocalGame {
         // then use getters to get player & cardToPlay
         // if this players turn
         // then ask gamestate to play card & return true if valid
+        if(action instanceof unoRestart){
+            //Log.e("today", "Restarted");
+            super.state = new UnoState();
+            return true;
+        }
+        if(action instanceof unoExit){
+            //super.state =
+        }
         return false;
     }
 

@@ -227,11 +227,13 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
         if (v.getId() == R.id.exitButton) {
             // send action to exit
+            //Log.e("Laptop", "hello");
             game.sendAction(new unoExit(this));
         }
 
         if (v.getId() == R.id.restartButton) {
             // send action to restart game
+            Log.e("Laptop", "hello");
             game.sendAction(new unoRestart(this));
         }
 
