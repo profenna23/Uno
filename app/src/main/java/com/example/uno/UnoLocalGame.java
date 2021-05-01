@@ -1,6 +1,7 @@
 package com.example.uno;
 
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
@@ -10,6 +11,8 @@ import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
+
+import org.w3c.dom.Text;
 
 
 public class UnoLocalGame extends LocalGame {
@@ -85,7 +88,8 @@ public class UnoLocalGame extends LocalGame {
            UnoState state = (UnoState) super.state;
            int cardPlayed = playCard.cardPlayed();
            int playerID = getPlayerIdx(playCard.getPlayer());
-           
+           //currentPlayerLabel.setText("");
+
            // get num of players
            GamePlayer[] players = getPlayers();
            int playersNum = players.length;
@@ -112,6 +116,8 @@ public class UnoLocalGame extends LocalGame {
                    (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                    state.getCardsInHandP1().remove(cardPlayed);
                    state.getCardsInHandP1().trimToSize();
+                   //currentPlayerLabel.setText("YOU");
+
                }
 
                // if 2,3, or 4 players:
@@ -124,6 +130,7 @@ public class UnoLocalGame extends LocalGame {
                     (state.getDiscardPile()).add(state.getCardsInHandP2().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                     state.getCardsInHandP2().remove(cardPlayed);
                     state.getCardsInHandP2().trimToSize();
+                    //currentPlayerLabel.setText("Player 2");
                 }
 
                 if (playersNum == 2){
@@ -141,6 +148,7 @@ public class UnoLocalGame extends LocalGame {
                     (state.getDiscardPile()).add(state.getCardsInHandP3().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                     state.getCardsInHandP3().remove(cardPlayed);
                     state.getCardsInHandP3().trimToSize();
+                    //currentPlayerLabel.setText("Player 3");
                 }
 
                 if (playersNum == 3){
@@ -158,6 +166,7 @@ public class UnoLocalGame extends LocalGame {
                     (state.getDiscardPile()).add(state.getCardsInHandP4().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                     state.getCardsInHandP4().remove(cardPlayed);
                     state.getCardsInHandP4().trimToSize();
+                    //currentPlayerLabel.setText("Player 4");
                 }
 
                 // if 4 players:
@@ -178,6 +187,7 @@ public class UnoLocalGame extends LocalGame {
             int playersNum = players.length;
 
             if(playerID == 0 ) {
+
                 state.getCardsInHandP1().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();

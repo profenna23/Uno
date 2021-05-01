@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.uno.R;
 import com.example.uno.UnoState;
@@ -209,6 +210,10 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
         Button drawButton = myActivity.findViewById(R.id.drawButton);
         drawButton.setOnClickListener(this);
+
+        //Sets the text view in the GUI (currentPlayerLabel)
+        TextView currentPlayerLabel = myActivity.findViewById(R.id.currentPlayerLabel);
+
 
 
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
