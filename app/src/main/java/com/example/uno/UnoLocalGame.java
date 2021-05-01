@@ -178,8 +178,8 @@ public class UnoLocalGame extends LocalGame {
             int playersNum = players.length;
 
             if(playerID == 0 ) {
-                state.getCardsInHandP1().add(state.getDrawPile().get(state.getDrawPile().size() - 1));
-                state.getDrawPile().remove(state.getDrawPile().size() - 1);
+                state.getCardsInHandP1().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
 
                 // if 2,3, or 4 players:
@@ -188,8 +188,8 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 1) {
-                state.getCardsInHandP2().add(state.getDrawPile().get(state.getDrawPile().size() - 1));
-                state.getDrawPile().remove(state.getDrawPile().size() - 1);
+                state.getCardsInHandP2().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
 
                 if (playersNum == 2){
@@ -203,8 +203,8 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 2) {
-                state.getCardsInHandP3().add(state.getDrawPile().get(state.getDrawPile().size() - 1));
-                state.getDrawPile().remove(state.getDrawPile().size() - 1);
+                state.getCardsInHandP3().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
 
                 if (playersNum == 3){
@@ -218,8 +218,8 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 3) {
-                state.getCardsInHandP4().add(state.getDrawPile().get(state.getDrawPile().size() - 1));
-                state.getDrawPile().remove(state.getDrawPile().size() - 1);
+                state.getCardsInHandP4().add(state.getDrawPile().get(0));
+                state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
 
                 // if 4 players:
