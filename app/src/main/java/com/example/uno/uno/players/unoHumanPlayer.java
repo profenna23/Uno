@@ -13,6 +13,7 @@ import com.example.uno.game.GameFramework.GameMainActivity;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameHumanPlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
@@ -109,6 +110,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             if (theState.getCardsInHandP1().size() >= 1){
                 cardButton = myActivity.findViewById(R.id.p1card1);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(0).getResId());
+                cardButton.setVisibility(View.VISIBLE);
                 cardButton.invalidate();
 
             }
@@ -119,7 +121,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             if (theState.getCardsInHandP1().size() >= 2){
                 cardButton = myActivity.findViewById(R.id.p1card2);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(1).getResId());
-
+                cardButton.setVisibility(View.VISIBLE);
                 cardButton.invalidate();
 
             }
@@ -129,7 +131,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             if (theState.getCardsInHandP1().size() >= 3){
                 cardButton = myActivity.findViewById(R.id.p1card3);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(2).getResId());
-
+                cardButton.setVisibility(View.VISIBLE);
                 cardButton.invalidate();
                 ;
             }
@@ -139,7 +141,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             if (theState.getCardsInHandP1().size() >= 4){
                 cardButton = myActivity.findViewById(R.id.p1card4);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(3).getResId());
-
+                cardButton.setVisibility(View.VISIBLE);
                 cardButton.invalidate();
 
             }
@@ -149,7 +151,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             if (theState.getCardsInHandP1().size() >= 5){
                 cardButton = myActivity.findViewById(R.id.p1card5);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(4).getResId());
-
+                cardButton.setVisibility(View.VISIBLE);
                 cardButton.invalidate();
 
             }
@@ -161,6 +163,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
                 cardButton = myActivity.findViewById(R.id.p1card6);
                 cardButton.setImageResource(theState.getCardsInHandP1().get(5).getResId());
 
+                cardButton.setVisibility(View.VISIBLE);
 
                 cardButton.invalidate();
 
@@ -209,6 +212,9 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
         Button drawButton = myActivity.findViewById(R.id.drawButton);
         drawButton.setOnClickListener(this);
+
+        Button unoButton = myActivity.findViewById(R.id.unoButton);
+        unoButton.setOnClickListener(this);
 
 
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
@@ -313,6 +319,10 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         if (v.getId() == R.id.helpButton) {
             // send action to pull up help menu
             game.sendAction(new unoHelp(this));
+        }
+        if(v.getId() == R.id.unoButton) {
+            game.sendAction(new unoDrawCard(this));
+            Log.e("onClick", "Sent unoDraw Action");
         }
 
         if(v.getId() == R.id.p1card1){
