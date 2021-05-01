@@ -181,9 +181,9 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
                 cardButton.setVisibility(View.INVISIBLE);
             }
             TextView currentPlayer = myActivity.findViewById(R.id.currentPlayerLabel);
-            Integer turnInt = (Integer)theState.getPlayerTurn();
+            Integer turnInt = (Integer)theState.getPlayerTurn() + 1;
             String turnText = turnInt.toString();
-            if (turnInt == 0) {
+            if (turnInt == 1) {
                 currentPlayer.setText("Current Player: YOU");
             }
             else {
