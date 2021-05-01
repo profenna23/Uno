@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.uno.R;
 import com.example.uno.UnoState;
@@ -179,7 +180,15 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             else {
                 cardButton.setVisibility(View.INVISIBLE);
             }
-
+            TextView currentPlayer = myActivity.findViewById(R.id.currentPlayerLabel);
+            Integer turnInt = (Integer)theState.getPlayerTurn();
+            String turnText = turnInt.toString();
+            if (turnInt == 0) {
+                currentPlayer.setText("Current Player: YOU");
+            }
+            else {
+                currentPlayer.setText("Current Player: " + turnText);
+            }
 
         }
         // Create left and right buttons to offset
@@ -209,6 +218,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
         Button drawButton = myActivity.findViewById(R.id.drawButton);
         drawButton.setOnClickListener(this);
+
 
 
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
