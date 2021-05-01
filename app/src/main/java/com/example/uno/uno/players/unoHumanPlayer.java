@@ -183,11 +183,6 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             else {
                 cardButton.setVisibility(View.INVISIBLE);
             }
-            TextView currentPlayer = myActivity.findViewById(R.id.textView1);
-            Integer turnInt = (Integer)theState.getPlayerTurn();
-            String turnText = turnInt.toString();
-            currentPlayer.setText(turnText);
-
 
         }
         // Create left and right buttons to offset
