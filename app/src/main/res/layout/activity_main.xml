@@ -237,7 +237,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="#000000"
-                android:text="UNO"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
