@@ -1,13 +1,10 @@
 package com.example.uno;
 
-import android.util.Log;
-
 import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
 import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
-import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
 
@@ -219,6 +216,9 @@ public class UnoLocalGame extends LocalGame {
             int playersNum = players.length;
 
             if(playerID == 0 ) {
+                if(state.getCardsInHandP1().size() > 7){
+                    return false;
+                }
                 state.getCardsInHandP1().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
@@ -229,6 +229,9 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 1) {
+                if(state.getCardsInHandP2().size() > 7){
+                    return false;
+                }
                 state.getCardsInHandP2().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
@@ -244,6 +247,9 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 2) {
+                if(state.getCardsInHandP3().size() > 7){
+                    return false;
+                }
                 state.getCardsInHandP3().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
@@ -259,6 +265,9 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 3) {
+                if(state.getCardsInHandP4().size() > 7){
+                    return false;
+                }
                 state.getCardsInHandP4().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
@@ -276,35 +285,28 @@ public class UnoLocalGame extends LocalGame {
         // if this players turn
         // then ask gamestate to play card & return true if valid
         if(action instanceof unoRestart){
+            //restart the game
             //Log.e("today", "Restarted");
-            super.state = new UnoState();
-            return true;
-        }
-        if(action instanceof unoExit){
-            //super.state =
-        }
-        return false;
-    }
+            //super.state = new UnoState();
 
-    @Override
-    protected boolean exitGame(GameAction action) {
+
+        }
         if (action instanceof unoExit) {
             //if action is unoExit
-            //then use constructor to get player
-
-            }
+            //exit the game completely
+            System.exit(0);
+            return true;
+        }
 
         return false;
+
     }
 
     @Override
-    protected boolean unoRestart(GameAction action) {
-        return false;
-    }
+    protected boolean exitGame(GameAction action) { return false; }
 
     @Override
-    protected boolean unoHelp(GameAction action) {
-        return false;
-    }
+    protected boolean unoRestart(GameAction action) { return false; }
+
 
 }
