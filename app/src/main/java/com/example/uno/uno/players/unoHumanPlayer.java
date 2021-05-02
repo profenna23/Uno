@@ -14,6 +14,7 @@ import com.example.uno.game.GameFramework.GameMainActivity;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameHumanPlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
@@ -216,7 +217,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button helpButton = myActivity.findViewById(R.id.helpButton);
         helpButton.setOnClickListener(this);
 
-        Button drawButton = myActivity.findViewById(R.id.drawButton);
+        Button drawButton = myActivity.findViewById(R.id.unoButton);
         drawButton.setOnClickListener(this);
 
 
@@ -348,6 +349,9 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             game.sendAction(new unoPlayCard(this, 6));
         } else {
             Log.e("onClick", "did nothing w click");
+        }
+        if(v.getId() == R.id.unoButton) {
+            game.sendAction(new unoDrawCard(this));
         }
 
 
