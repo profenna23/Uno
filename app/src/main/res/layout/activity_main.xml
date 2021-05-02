@@ -352,7 +352,7 @@
         <Button
             android:id="@+id/restartButton"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:background="#673AB7"
@@ -363,31 +363,13 @@
         <Button
             android:id="@+id/exitButton"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:background="#673AB7"
             android:padding="10dp"
             android:text="EXIT" />
 
-        <Button
-            android:id="@+id/helpButton"
-            android:layout_width="match_parent"
-            android:layout_height="68dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:background="#673AB7"
-            android:padding="10dp"
-            android:text="HELP" />
-
-        <Button
-            android:id="@+id/drawButton"
-            android:layout_width="match_parent"
-            android:layout_height="77dp"
-            android:layout_weight="1"
-            android:background="#673AB7"
-            android:padding="10dp"
-            android:text="DRAW" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
