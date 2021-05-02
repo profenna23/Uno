@@ -1,13 +1,10 @@
 package com.example.uno;
 
-import android.util.Log;
-
 import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
 import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
-import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
 
@@ -111,7 +108,7 @@ public class UnoLocalGame extends LocalGame {
                if (isValid(playersCard, lastPlayed) == true){
                    (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                    state.getCardsInHandP1().remove(cardPlayed);
-                   //state.getCardsInHandP1().trimToSize();
+                   state.getCardsInHandP1().trimToSize();
                }
 
                // if 2,3, or 4 players:
@@ -247,34 +244,28 @@ public class UnoLocalGame extends LocalGame {
         // if this players turn
         // then ask gamestate to play card & return true if valid
         if(action instanceof unoRestart){
+            //restart the game
             //Log.e("today", "Restarted");
-            super.state = new UnoState();
-            return true;
-        }
-        if(action instanceof unoExit){
-            //super.state =
-        }
-        return false;
-    }
+            //super.state = new UnoState();
 
-    @Override
-    protected boolean exitGame(GameAction action) {
+
+        }
         if (action instanceof unoExit) {
             //if action is unoExit
-            //then use constructor to get player
-
-            }
+            //exit the game completely
+            System.exit(0);
+            return true;
+        }
 
         return false;
+
     }
 
     @Override
-    protected boolean unoRestart(GameAction action) { return false;
-    }
+    protected boolean exitGame(GameAction action) { return false; }
 
     @Override
-    protected boolean unoHelp(GameAction action) {
-        return false;
-    }
+    protected boolean unoRestart(GameAction action) { return false; }
+
 
 }
