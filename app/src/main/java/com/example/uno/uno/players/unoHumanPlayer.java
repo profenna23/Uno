@@ -214,11 +214,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button restartButton = myActivity.findViewById(R.id.restartButton);
         restartButton.setOnClickListener(this);
 
-        Button helpButton = myActivity.findViewById(R.id.helpButton);
-        helpButton.setOnClickListener(this);
 
-        Button drawButton = myActivity.findViewById(R.id.drawButton);
-        drawButton.setOnClickListener(this);
+
 
 
 
