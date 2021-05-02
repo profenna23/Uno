@@ -291,6 +291,8 @@ public class UnoLocalGame extends LocalGame {
             //Log.e("today", "Restarted");
             //super.state = new UnoState();
             //Intent intent = new Intent(currentActivity.this, Main.class);
+
+            return true;
         }
         if (action instanceof unoExit) {
             //if action is unoExit

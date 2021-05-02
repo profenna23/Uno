@@ -206,11 +206,11 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button restartButton = myActivity.findViewById(R.id.restartButton);
         restartButton.setOnClickListener(this);
 
-        Button helpButton = myActivity.findViewById(R.id.helpButton);
-        helpButton.setOnClickListener(this);
+        //Button helpButton = myActivity.findViewById(R.id.helpButton);
+        //helpButton.setOnClickListener(this);
 
-        Button drawButton = myActivity.findViewById(R.id.drawButton);
-        drawButton.setOnClickListener(this);
+        //Button drawButton = myActivity.findViewById(R.id.drawButton);
+        //drawButton.setOnClickListener(this);
 
 
         //surfaceView = myActivity.findViewById(R.id.unoSurfaceView)
@@ -310,6 +310,7 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             // send action to restart game
             Log.e("Laptop", "hello");
             game.sendAction(new unoRestart(this));
+
         }
 
        /* if (v.getId() == R.id.helpButton) {
