@@ -151,6 +151,9 @@ public class UnoLocalGame extends LocalGame {
                    state.getCardsInHandP1().remove(cardPlayed);
                    state.getCardsInHandP1().trimToSize();
                }
+               else {
+                   return false;
+               }
 
                // if 2,3, or 4 players:
                state.setPlayerTurn(1);
@@ -216,9 +219,7 @@ public class UnoLocalGame extends LocalGame {
             int playersNum = players.length;
 
             if(playerID == 0 ) {
-                if(state.getCardsInHandP1().size() > 7){
-                    return false;
-                }
+
                 state.getCardsInHandP1().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
@@ -229,9 +230,7 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 1) {
-                if(state.getCardsInHandP2().size() > 7){
-                    return false;
-                }
+
                 state.getCardsInHandP2().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
@@ -247,9 +246,7 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 2) {
-                if(state.getCardsInHandP3().size() > 7){
-                    return false;
-                }
+
                 state.getCardsInHandP3().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
@@ -265,9 +262,7 @@ public class UnoLocalGame extends LocalGame {
                 return true;
             }
             if(playerID == 3) {
-                if(state.getCardsInHandP4().size() > 7){
-                    return false;
-                }
+
                 state.getCardsInHandP4().add(state.getDrawPile().get(0));
                 state.getDrawPile().remove(0);
                 state.getDrawPile().trimToSize();
