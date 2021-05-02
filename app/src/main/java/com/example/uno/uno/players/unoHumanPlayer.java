@@ -16,6 +16,7 @@ import com.example.uno.game.GameFramework.GameMainActivity;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameHumanPlayer;
+import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
@@ -214,6 +215,9 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button restartButton = myActivity.findViewById(R.id.restartButton);
         restartButton.setOnClickListener(this);
 
+        Button drawButton = myActivity.findViewById(R.id.unoButton);
+        drawButton.setOnClickListener(this);
+
 
 
 
@@ -316,6 +320,10 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             // send action to restart game
             Log.e("Laptop", "hello");
             game.sendAction(new unoRestart(this));
+        }
+
+        if(v.getId() == R.id.unoButton) {
+            game.sendAction(new unoDrawCard(this));
         }
 
        /* if (v.getId() == R.id.helpButton) {
