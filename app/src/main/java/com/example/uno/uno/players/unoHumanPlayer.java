@@ -5,8 +5,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 import com.example.uno.R;
 import com.example.uno.UnoState;
@@ -14,20 +16,18 @@ import com.example.uno.game.GameFramework.GameMainActivity;
 import com.example.uno.game.GameFramework.infoMessage.GameInfo;
 import com.example.uno.game.GameFramework.infoMessage.GameState;
 import com.example.uno.game.GameFramework.players.GameHumanPlayer;
-import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
-import com.example.uno.uno.tttActionMessage.actions.unoHelp;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
 import com.example.uno.uno.tttActionMessage.actions.unoRestart;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListener {
 
     // on clicks/taps - send the game a move (as in cp)
     // this class is the actual GUI interface - links to surfaceView
+
 
     //Tag for logging
     private static final String TAG = "UnoHumanPlayer";
@@ -214,11 +214,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button restartButton = myActivity.findViewById(R.id.restartButton);
         restartButton.setOnClickListener(this);
 
-        Button helpButton = myActivity.findViewById(R.id.helpButton);
-        helpButton.setOnClickListener(this);
 
-        Button drawButton = myActivity.findViewById(R.id.unoButton);
-        drawButton.setOnClickListener(this);
+
 
 
 
@@ -321,11 +318,12 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             game.sendAction(new unoRestart(this));
         }
 
-        if (v.getId() == R.id.helpButton) {
+       /* if (v.getId() == R.id.helpButton) {
             // send action to pull up help menu
             game.sendAction(new unoHelp(this));
         }
-
+        */
+        
         if(v.getId() == R.id.p1card1){
             Log.e("onClick", "sending human card 0");
             game.sendAction(new unoPlayCard(this, 0));
@@ -349,9 +347,6 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
             game.sendAction(new unoPlayCard(this, 6));
         } else {
             Log.e("onClick", "did nothing w click");
-        }
-        if(v.getId() == R.id.unoButton) {
-            game.sendAction(new unoDrawCard(this));
         }
 
 
