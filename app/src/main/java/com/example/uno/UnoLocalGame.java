@@ -1,5 +1,7 @@
 package com.example.uno;
 
+import android.content.Intent;
+
 import com.example.uno.game.GameFramework.LocalGame;
 import com.example.uno.game.GameFramework.actionMessage.GameAction;
 import com.example.uno.game.GameFramework.players.GamePlayer;
@@ -247,8 +249,7 @@ public class UnoLocalGame extends LocalGame {
             //restart the game
             //Log.e("today", "Restarted");
             //super.state = new UnoState();
-
-
+            //Intent intent = new Intent(currentActivity.this, Main.class);
         }
         if (action instanceof unoExit) {
             //if action is unoExit

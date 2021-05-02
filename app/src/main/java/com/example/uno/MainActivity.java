@@ -72,4 +72,9 @@ public class MainActivity extends GameMainActivity {
 
 
     }
+
+    @Override
+    public void startActivity() {
+
+    }
 }

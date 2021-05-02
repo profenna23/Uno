@@ -849,6 +849,8 @@ public abstract class GameMainActivity extends Activity implements
         return this.getResources().getString(R.string.settings_tab);
     }
 
+    public abstract void startActivity();
+
 
     /**
      * Helper-class so that we disable the name fields in the configuration
