@@ -1,13 +1,15 @@
 package com.example.uno.uno.players;
 
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.uno.MainActivity;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+
 import com.example.uno.R;
 import com.example.uno.UnoState;
 import com.example.uno.game.GameFramework.GameMainActivity;
@@ -306,8 +308,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
 
         if (v.getId() == R.id.restartButton) {
             // send action to restart game
-            //Log.e("Laptop", "hello");
-
+            Log.e("Laptop", "hello");
+            game.sendAction(new unoRestart(this));
         }
 
        /* if (v.getId() == R.id.helpButton) {

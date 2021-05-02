@@ -1,5 +1,7 @@
 package com.example.uno;
 
+import android.widget.TextView;
+
 import com.example.uno.game.GameFramework.infoMessage.GameState;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ public class UnoState extends GameState {
     // Where all the cards go after they're played
     private ArrayList <Card> discardPile;
     private ArrayList<Card> drawPile;
+
 
     private int playerTurn;
 
