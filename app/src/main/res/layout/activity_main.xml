@@ -21,6 +21,16 @@
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/player4Label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Player 4"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:translationY="110dp" />
+
         <ImageButton
             android:id="@+id/p4card1"
             android:layout_width="146dp"
@@ -152,35 +162,47 @@
 
         <LinearLayout
             android:id="@+id/player2"
-            android:layout_width="match_parent"
+            android:layout_width="664dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp">
 
+            <TextView
+                android:id="@+id/player2Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_weight="0"
+                android:text="Player 2"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:translationX="-20dp" />
+
             <ImageButton
                 android:id="@+id/p2card1"
-                android:scaleType="fitCenter"
                 android:layout_width="146dp"
                 android:layout_height="229dp"
                 android:layout_weight="0"
+                android:scaleType="fitCenter"
                 android:src="@drawable/back_of_card" />
 
             <ImageButton
                 android:id="@+id/p2card2"
-                android:scaleType="fitCenter"
                 android:layout_width="146dp"
                 android:layout_height="229dp"
-                android:layout_weight="0"
                 android:layout_alignParentBottom="true"
+                android:layout_weight="0"
+                android:scaleType="fitCenter"
                 android:src="@drawable/back_of_card" />
 
             <ImageButton
                 android:id="@+id/p2card3"
-                android:scaleType="fitCenter"
                 android:layout_width="146dp"
                 android:layout_height="229dp"
                 android:layout_weight="0"
+                android:scaleType="fitCenter"
                 android:src="@drawable/back_of_card" />
 
         </LinearLayout>
@@ -215,7 +237,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="#000000"
-                android:text="UNO"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -232,14 +253,25 @@
             android:textSize="30dp"
             android:translationY="-10dp" />
 
+        <TextView
+            android:id="@+id/currentPlayerLabel"
+            android:layout_width="475dp"
+            android:layout_height="59dp"
+            android:layout_gravity="right|top"
+            android:layout_weight="1"
+            android:text="Current Player:"
+            android:textColor="#020202"
+            android:textSize="30sp"
+            android:translationY="-40dp" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="200dp"
-        android:layout_height="560dp"
+        android:layout_height="631dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
         android:layout_weight="1"
         android:gravity="center_horizontal"
@@ -257,6 +289,15 @@
             android:gravity="center|center_horizontal|center_vertical"
             android:orientation="vertical"
             android:translationY="-70dp">
+
+            <TextView
+                android:id="@+id/player3Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Player 3"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:translationY="130dp" />
 
             <ImageButton
                 android:id="@+id/p3card1"
@@ -288,6 +329,7 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/back_of_card"
                 android:translationY="-85dp" />
+
         </LinearLayout>
 
     </LinearLayout>

@@ -59,6 +59,10 @@ public class UnoLocalGame extends LocalGame {
 
     public boolean isValid(Card desiredPlay, Card lastPlayed){
 
+        if (lastPlayed.getNum() == -4 || lastPlayed.getNum() == -5){
+            // previous was a wild, anything is valid
+            return true;
+        }
         if (desiredPlay.getNum() == lastPlayed.getNum()){
             // number matches; valid move
             return true;
@@ -103,9 +107,46 @@ public class UnoLocalGame extends LocalGame {
                playersCard = state.getCardsInHandP4().get(cardPlayed);
            }
 
+            int numRed = 0;
+            int numGreen = 0;
+            int numBlue = 0;
+            int numYellow = 0;
+            int changeColorTo = 0;
+
            if(playerID == 0) {
 
                if (isValid(playersCard, lastPlayed) == true){
+
+                   /*// wild card function:
+                   if (playersCard.getNum() == -4 ||  playersCard.getNum() == -5){
+                       // read cards and change color for them
+                       for (int i = 0; i < state.getCardsInHandP1().size(); i++){
+                           // loop through cards in hand
+                           if (state.getCardsInHandP1().get(i).getColor() == 1){
+                               numRed++;
+                           } else if (state.getCardsInHandP1().get(i).getColor() == 2){
+                               numGreen++;
+                           } else if (state.getCardsInHandP1().get(i).getColor() == 3){
+                               numBlue++;
+                           } else if ((state.getCardsInHandP1().get(i).getColor() == 4)){
+                               numYellow++;
+                           } else {
+                               // wild card
+                               continue;
+                           }
+                       }
+                       if (numRed >= numGreen && numRed >= numBlue && numRed >= numYellow){
+                           changeColorTo = 1;
+                           // play another card?
+                       } else if (numGreen >= numRed && numGreen >= numBlue && numGreen >= numYellow){
+                           changeColorTo = 2;
+                       } else if (numBlue >= numRed && numBlue >= numGreen && numBlue >= numYellow){
+                           changeColorTo = 3;
+                       } else {
+                           changeColorTo = 4;
+                       }
+                   }*/
+
                    (state.getDiscardPile()).add(state.getCardsInHandP1().get(cardPlayed)); // 0 needs to be where in the hand the card has been played
                    state.getCardsInHandP1().remove(cardPlayed);
                    state.getCardsInHandP1().trimToSize();
