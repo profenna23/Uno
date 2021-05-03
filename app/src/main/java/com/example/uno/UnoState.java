@@ -599,4 +599,10 @@ public class UnoState extends GameState {
     public ArrayList<Card> getDeckOfCards() {
         return deckOfCards;
     }
+
+
+    @Override
+    public void exitGame() {
+
+    }
 }

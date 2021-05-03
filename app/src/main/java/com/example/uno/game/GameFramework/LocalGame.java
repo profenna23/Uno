@@ -402,7 +402,7 @@ public abstract class LocalGame implements Game, Tickable {
      * @return
      *          Tells whether the action was confirmed or not.
      */
-    protected abstract boolean unoRestart(GameAction action);
+    //protected abstract boolean unoRestart(GameAction action);
 
     /**
      * Makes a move, called Help on behalf of a player.

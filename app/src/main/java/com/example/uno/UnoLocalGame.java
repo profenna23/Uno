@@ -8,10 +8,12 @@ import com.example.uno.game.GameFramework.players.GamePlayer;
 import com.example.uno.uno.tttActionMessage.actions.unoDrawCard;
 import com.example.uno.uno.tttActionMessage.actions.unoExit;
 import com.example.uno.uno.tttActionMessage.actions.unoPlayCard;
-import com.example.uno.uno.tttActionMessage.actions.unoRestart;
+
 
 
 public class UnoLocalGame extends LocalGame {
+
+
 
     public UnoLocalGame() {
         super();
@@ -286,18 +288,19 @@ public class UnoLocalGame extends LocalGame {
         // then use getters to get player & cardToPlay
         // if this players turn
         // then ask gamestate to play card & return true if valid
-        if(action instanceof unoRestart){
+        /*if(action instanceof unoRestart){
             //restart the game
             //Log.e("today", "Restarted");
             //super.state = new UnoState();
             //Intent intent = new Intent(currentActivity.this, Main.class);
-
             return true;
-        }
+        }*/
+
         if (action instanceof unoExit) {
             //if action is unoExit
             //exit the game completely
-            System.exit(0);
+            ((UnoState)state).exitGame();
+            System.exit(1);
             return true;
         }
 
@@ -305,11 +308,14 @@ public class UnoLocalGame extends LocalGame {
 
     }
 
+
+
+
     @Override
     protected boolean exitGame(GameAction action) { return false; }
 
-    @Override
+    /*@Override
     protected boolean unoRestart(GameAction action) { return false; }
-
+    */
 
 }

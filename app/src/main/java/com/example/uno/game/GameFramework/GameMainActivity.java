@@ -922,14 +922,14 @@ public abstract class GameMainActivity extends Activity implements
      * Restarts the activity (the game) with the configuration the user selected when they originally
      * started the game
      */
-    public void restartGame(){
+    /*public void restartGame(){
         //Might need to fake a configuration for the restart to work properly
         String msg = launchGame(this.restartConfig, null);
         if (msg != null) {
             // we have an error message
             MessageBox.popUpMessage(msg, this);
         }
-    }
+    }*/
 
     /**
      * saveGame, saves the current configuration and gameState

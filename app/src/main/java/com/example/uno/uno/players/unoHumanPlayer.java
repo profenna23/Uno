@@ -212,8 +212,8 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         Button exitButton = myActivity.findViewById(R.id.exitButton);
         exitButton.setOnClickListener(this);
 
-        Button restartButton = myActivity.findViewById(R.id.restartButton);
-        restartButton.setOnClickListener(this);
+        //Button restartButton = myActivity.findViewById(R.id.restartButton);
+        //restartButton.setOnClickListener(this);
 
         Button drawButton = myActivity.findViewById(R.id.unoButton);
         drawButton.setOnClickListener(this);
@@ -313,14 +313,14 @@ public class unoHumanPlayer extends GameHumanPlayer implements View.OnClickListe
         if (v.getId() == R.id.exitButton) {
             // send action to exit
             //Log.e("Laptop", "hello");
-            game.sendAction(new unoExit(this));
+            System.exit(0);
         }
 
-        if (v.getId() == R.id.restartButton) {
+        /*if (v.getId() == R.id.restartButton) {
             // send action to restart game
             Log.e("Laptop", "hello");
             game.sendAction(new unoRestart(this));
-        }
+        }*/
 
         if(v.getId() == R.id.unoButton) {
             game.sendAction(new unoDrawCard(this));

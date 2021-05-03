@@ -299,7 +299,7 @@ public abstract class GameHumanPlayer implements GamePlayer, Tickable {
                         //If they want to restart the game, restart it
                         new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface di, int val) {
-                                myActivity.restartGame();
+                                //myActivity.restartGame();
                             }},
                         //If not, then just display who won the game
                         new DialogInterface.OnClickListener(){
